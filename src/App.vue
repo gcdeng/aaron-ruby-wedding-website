@@ -49,6 +49,43 @@
         <div class="img img-7"></div>
       </div>
     </div>
+    <div class="block-event">
+      <div>
+        <div class="title">Wedding Events</div>
+        <div class="row">
+          <div class="col">
+            <div class="img event-1"></div>
+            <div class="event-name">Wedding Ceremony</div>
+            <div class="event-time">11:00AM</div>
+          </div>
+          <div class="col">
+            <div class="img event-2"></div>
+            <div class="event-name">Luncheon</div>
+            <div class="event-time">12:30PM</div>
+          </div>
+        </div>
+        <div class="location">
+          <div class="venue">
+            <a
+              href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              陽明山中國麗緻飯店
+            </a>
+          </div>
+          <div class="address">
+            <a
+              href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              台北市士林區格致路237號
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -192,6 +229,68 @@ $backgroundColor1: #eaeef1;
     width: 100%;
     height: 150vh;
     background-image: url(assets/img/20190830_R7005505.jpeg);
+  }
+}
+.block-event {
+  padding: 20vh 0;
+  // background-color: rgba(245, 226, 228, 0.5);
+  background-color: #f6efef;
+  & > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    & > div:not(:last-child) {
+      margin-bottom: 50px;
+    }
+  }
+  .title {
+    text-align: center;
+    font-size: 2rem;
+  }
+  .row {
+    display: flex;
+    flex-direction: row;
+    .col {
+      margin: 0 10px;
+      flex: 50%;
+      max-width: 50%;
+      text-align: center;
+      box-shadow: 0px 5px 35px rgba(53, 53, 53, 0.06);
+      border-radius: 5px;
+      padding: 30px;
+    }
+  }
+  .img {
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    &.event-1 {
+      background-image: url(assets/img/1586074121_16876.jpg);
+    }
+    &.event-2 {
+      background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
+    }
+  }
+  .event-name {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+  }
+  .event-time {
+    font-size: 1.2rem;
+  }
+  .location {
+    text-align: center;
+    .venue {
+      font-size: 1.8rem;
+      margin-bottom: 5px;
+    }
+    .address {
+    }
   }
 }
 </style>
