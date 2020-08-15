@@ -12,6 +12,7 @@
         </div>
         <div class="text">
           給每一個曾參與我們成長過程的你們：<br />
+          <br />
           歷經了8年的愛情長跑，我們決定對一路從學生時期陪伴的彼此，許下共度餘生的承諾💍<br />
           <br />
           在這個疫情攪局的2020年，世界發生了很多改變，計畫也不停地被打亂。<br />
@@ -45,6 +46,7 @@
             <div class="img img-6" />
           </div>
         </div>
+        <div class="img img-7"></div>
       </div>
     </div>
   </div>
@@ -129,7 +131,6 @@ $backgroundColor1: #eaeef1;
 }
 .block-profile {
   background-color: $backgroundColor1;
-  padding-bottom: 20vh;
   & > div {
     width: 60vw;
     margin: auto;
@@ -186,6 +187,11 @@ $backgroundColor1: #eaeef1;
     height: 100%;
     background-image: url(assets/img/20190830_R7005743.jpeg);
     background-position: bottom;
+  }
+  .img-7 {
+    width: 100%;
+    height: 150vh;
+    background-image: url(assets/img/20190830_R7005505.jpeg);
   }
 }
 </style>
