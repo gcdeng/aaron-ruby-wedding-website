@@ -65,6 +65,7 @@
           </div>
         </div>
         <div class="location">
+          <div class="caption">THE VENUE</div>
           <div class="venue">
             <a
               href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
@@ -246,6 +247,7 @@ $backgroundColor1: #eaeef1;
   .title {
     text-align: center;
     font-size: 2rem;
+    font-weight: 500;
   }
   .row {
     display: flex;
@@ -285,6 +287,10 @@ $backgroundColor1: #eaeef1;
   }
   .location {
     text-align: center;
+    .caption {
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
     .venue {
       font-size: 1.8rem;
       margin-bottom: 5px;
