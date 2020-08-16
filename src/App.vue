@@ -63,7 +63,7 @@
             <div class="text event-time">
               12:30<span class="small">PM</span>
             </div>
-            <div class="text event-name">#luncheon</div>
+            <div class="text event-name">#lunch</div>
           </div>
         </div>
         <div class="location">
@@ -89,14 +89,53 @@
         </div>
       </div>
     </div>
+    <div class="block-gallery">
+      <stack
+        :column-min-width="150"
+        :gutter-width="10"
+        :gutter-height="10"
+        monitor-images-loaded
+        v-viewer="viewerOptions"
+      >
+        <stack-item class="img-container" v-for="(src, i) in images" :key="i">
+          <img :src="src" />
+        </stack-item>
+      </stack>
+    </div>
   </div>
 </template>
 
 <script>
 import Vara from "vara";
+import { Stack, StackItem } from "vue-stack-grid";
+const gallery = require.context("@/assets/img/gallery");
+const images = gallery.keys().map(key => gallery(key));
+
 export default {
   name: "App",
-  components: {},
+  components: { Stack, StackItem },
+  data() {
+    return {
+      viewerOptions: {
+        movable: false,
+        title: false,
+        rotatable: false,
+        scalable: false,
+        zoomable: false,
+        zoomOnTouch: false,
+        zoomOnWheel: false,
+        tooltip: false,
+        toggleOnDblclick: false,
+        transition: false,
+        toolbar: {
+          prev: 2,
+          play: 2,
+          next: 2
+        }
+      },
+      images
+    };
+  },
   mounted() {
     const varaFontJsonPath =
       "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json";
@@ -253,7 +292,6 @@ $backgroundColor1: #eaeef1;
   }
   .row {
     display: flex;
-    flex-direction: row;
     .col {
       margin: 0 10px;
       flex: 50%;
@@ -318,6 +356,30 @@ $backgroundColor1: #eaeef1;
         margin-right: 5px;
       }
     }
+  }
+}
+.block-gallery {
+  min-height: 100vh;
+  padding: 10vh;
+  .img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: center;
+    overflow: hidden;
+    margin: 0;
+    object-fit: fill;
+    cursor: pointer;
+  }
+  .img-container img {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: auto;
+  }
+  .img-container figcaption {
+    margin: 3px 0;
+    text-align: center;
   }
 }
 </style>

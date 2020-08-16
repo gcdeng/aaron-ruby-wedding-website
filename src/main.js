@@ -1,5 +1,8 @@
 import Vue from "vue";
 import App from "./App.vue";
+import "viewerjs/dist/viewer.css";
+import Viewer from "v-viewer";
+Vue.use(Viewer);
 import "@/fontawesome";
 import "@/assets/scss";
 
