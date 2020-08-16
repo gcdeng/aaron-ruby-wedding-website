@@ -22,6 +22,15 @@
           在這個對我們來說非常重要的日子，<br />
           邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。
         </div>
+        <div class="text rsvp">
+          <a
+            href="https://www.surveycake.com/s/vrPmp"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            RSVP
+          </a>
+        </div>
       </div>
     </div>
     <div class="block-profile">
@@ -206,6 +215,10 @@ $backgroundColor1: #eaeef1;
     font-size: 1rem;
     max-width: 25rem;
     margin-left: auto;
+    margin-bottom: 2rem;
+  }
+  .rsvp {
+    font-weight: 500;
   }
 }
 .block-profile {
