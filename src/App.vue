@@ -83,7 +83,7 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              台北市士林區格致路237號
+              <font-awesome-icon icon="map-marker-alt" />台北市士林區格致路237號
             </a>
           </div>
         </div>
@@ -314,6 +314,9 @@ $backgroundColor1: #eaeef1;
     }
     .address {
       font-size: 0.9rem;
+      svg {
+        margin-right: 5px;
+      }
     }
   }
 }
