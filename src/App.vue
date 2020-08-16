@@ -53,15 +53,17 @@
       <div>
         <div class="title">Wedding Events</div>
         <div class="row">
-          <div class="col">
-            <div class="img event-1"></div>
-            <div class="event-name">Wedding Ceremony</div>
-            <div class="event-time">11:00AM</div>
+          <div class="col img event-1">
+            <div class="text event-time">
+              11:00<span class="small">AM</span>
+            </div>
+            <div class="text event-name">#weddingceremony</div>
           </div>
-          <div class="col">
-            <div class="img event-2"></div>
-            <div class="event-name">Luncheon</div>
-            <div class="event-time">12:30PM</div>
+          <div class="col img event-2">
+            <div class="text event-time">
+              12:30<span class="small">PM</span>
+            </div>
+            <div class="text event-name">#luncheon</div>
           </div>
         </div>
         <div class="location">
@@ -241,7 +243,7 @@ $backgroundColor1: #eaeef1;
     align-items: center;
     flex-direction: column;
     & > div:not(:last-child) {
-      margin-bottom: 50px;
+      margin-bottom: 100px;
     }
   }
   .title {
@@ -256,34 +258,49 @@ $backgroundColor1: #eaeef1;
       margin: 0 10px;
       flex: 50%;
       max-width: 50%;
-      text-align: center;
       box-shadow: 0px 5px 35px rgba(53, 53, 53, 0.06);
-      border-radius: 5px;
       padding: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      & > .text {
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
     }
   }
   .img {
     border-radius: 5px;
-    width: 400px;
-    height: 400px;
-    margin: auto;
-    margin-bottom: 20px;
+    width: 50%;
+    min-width: 300px;
+    max-width: 400px;
+    min-height: 300px;
+    max-height: 400px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     &.event-1 {
-      background-image: url(assets/img/1586074121_16876.jpg);
+      background-image: url(assets/img/shardayyy-photography-fJzmPe-a0eU-unsplash.jpg);
     }
     &.event-2 {
       background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
     }
   }
   .event-name {
+    padding: 0 10px;
+    border-radius: 3px;
     font-size: 1.5rem;
-    margin-bottom: 5px;
+    text-decoration: underline;
+    color: #000;
+    background-color: #fff;
   }
-  .event-time {
-    font-size: 1.2rem;
+  .text.event-time {
+    font-size: 2.5rem;
+    color: #fff;
+    .small {
+      font-size: 1.5rem;
+    }
   }
   .location {
     text-align: center;
@@ -296,6 +313,7 @@ $backgroundColor1: #eaeef1;
       margin-bottom: 5px;
     }
     .address {
+      font-size: 0.9rem;
     }
   }
 }
