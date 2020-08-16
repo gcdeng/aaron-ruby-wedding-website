@@ -91,7 +91,7 @@
     </div>
     <div class="block-gallery">
       <stack
-        :column-min-width="150"
+        :column-min-width="200"
         :gutter-width="10"
         :gutter-height="10"
         monitor-images-loaded
@@ -327,7 +327,7 @@ $backgroundColor1: #eaeef1;
   }
   .event-name {
     padding: 0 10px;
-    border-radius: 3px;
+    border-radius: 5px;
     font-size: 1.5rem;
     text-decoration: underline;
     color: #000;
@@ -360,7 +360,7 @@ $backgroundColor1: #eaeef1;
 }
 .block-gallery {
   min-height: 100vh;
-  padding: 10vh;
+  padding: 10vh 10vw;
   .img-container {
     display: flex;
     align-items: center;
@@ -376,6 +376,7 @@ $backgroundColor1: #eaeef1;
     margin: 0;
     width: 100%;
     height: auto;
+    border-radius: 5px;
   }
   .img-container figcaption {
     margin: 3px 0;
