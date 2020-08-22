@@ -111,6 +111,9 @@
         </stack-item>
       </stack>
     </div>
+    <div class="block-copyright">
+      Copyright &#169; 2020 All rights reserved. Eric made with &#128153;
+    </div>
   </div>
 </template>
 
@@ -373,17 +376,23 @@ $backgroundColor1: #eaeef1;
 }
 .block-gallery {
   overflow-x: scroll;
-  margin: 20vh 20px;
+  padding: 20vh 1rem;
   &::-webkit-scrollbar {
     display: none;
   }
   .vsg-container {
-    min-width: 1500px;
+    min-width: 992px;
     .vsg-stack-item img {
       width: 100%;
       border-radius: 5px;
       cursor: pointer;
+      margin-right: 1rem;
     }
   }
+}
+
+.block-copyright {
+  padding: 1rem;
+  text-align: center;
 }
 </style>
