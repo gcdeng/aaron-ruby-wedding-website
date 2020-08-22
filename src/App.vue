@@ -102,7 +102,7 @@
       <stack
         :column-min-width="150"
         :gutter-width="10"
-        :gutter-height="10"
+        :gutter-height="5"
         monitor-images-loaded
         v-viewer="viewerOptions"
       >
