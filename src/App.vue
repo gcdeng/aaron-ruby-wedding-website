@@ -100,13 +100,13 @@
     </div>
     <div class="block-gallery">
       <stack
-        :column-min-width="200"
+        :column-min-width="150"
         :gutter-width="10"
         :gutter-height="10"
         monitor-images-loaded
         v-viewer="viewerOptions"
       >
-        <stack-item class="img-container" v-for="(src, i) in images" :key="i">
+        <stack-item v-for="(src, i) in images" :key="i">
           <img :src="src" />
         </stack-item>
       </stack>
@@ -288,8 +288,8 @@ $backgroundColor1: #eaeef1;
 }
 .block-event {
   padding: 20vh 0;
-  // background-color: rgba(245, 226, 228, 0.5);
-  background-color: #f6efef;
+  background-color: rgba(245, 226, 228, 0.5);
+  // background-color: #f6efef;
   & > div {
     display: flex;
     align-items: center;
@@ -372,28 +372,18 @@ $backgroundColor1: #eaeef1;
   }
 }
 .block-gallery {
-  min-height: 100vh;
-  padding: 10vh 10vw;
-  .img-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: center;
-    overflow: hidden;
-    margin: 0;
-    object-fit: fill;
-    cursor: pointer;
+  overflow-x: scroll;
+  margin: 20vh 20px;
+  &::-webkit-scrollbar {
+    display: none;
   }
-  .img-container img {
-    display: block;
-    margin: 0;
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-  }
-  .img-container figcaption {
-    margin: 3px 0;
-    text-align: center;
+  .vsg-container {
+    min-width: 1500px;
+    .vsg-stack-item img {
+      width: 100%;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   }
 }
 </style>
