@@ -112,7 +112,7 @@
       </stack>
     </div>
     <div class="block-copyright">
-      Copyright &#169; 2020 All rights reserved. Eric made with &#128153;
+      Copyright &#169; 2020 All rights reserved. Eric made with &#129293;
     </div>
   </div>
 </template>
@@ -129,6 +129,7 @@ export default {
   data() {
     return {
       viewerOptions: {
+        button: false,
         movable: false,
         title: false,
         rotatable: false,
@@ -177,6 +178,7 @@ $backgroundColor1: #eaeef1;
   color: #2c3e50;
 }
 .block-landing {
+  position: relative;
   background-image: url(assets/img/20190830_R7005511.jpeg);
   height: 100vh;
   background-size: cover;
@@ -376,7 +378,7 @@ $backgroundColor1: #eaeef1;
 }
 .block-gallery {
   overflow-x: scroll;
-  padding: 20vh 1rem;
+  padding: 20vh 1rem 10vh 1rem;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -394,5 +396,6 @@ $backgroundColor1: #eaeef1;
 .block-copyright {
   padding: 1rem;
   text-align: center;
+  color: #dadada;
 }
 </style>
