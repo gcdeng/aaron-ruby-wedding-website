@@ -1,9 +1,11 @@
 <template>
   <div id="app">
-    <div class="block-landing">
+    <div ref="blockLanding" class="block-landing">
       <div class="greet-text"></div>
+      <div class="shadow mask"></div>
+      <div ref="blockLandingMask" class="mask"></div>
     </div>
-    <div class="block-invite">
+    <div class="block block-invite" ref="blockInvite">
       <div>
         <div class="date">
           <div>Saturday</div>
@@ -33,7 +35,7 @@
         </div>
       </div>
     </div>
-    <div class="block-profile">
+    <div class="block block-profile">
       <div>
         <div class="name">Aaron</div>
         <div class="row">
@@ -45,6 +47,8 @@
             <div class="img img-3" />
           </div>
         </div>
+      </div>
+      <div>
         <div class="name" :style="{ textAlign: 'right' }">Ruby</div>
         <div class="row">
           <div class="column">
@@ -58,7 +62,7 @@
         <div class="img img-7"></div>
       </div>
     </div>
-    <div class="block-event">
+    <div class="block block-event">
       <div>
         <div class="title">Wedding Events</div>
         <div class="row">
@@ -98,7 +102,7 @@
         </div>
       </div>
     </div>
-    <div class="block-gallery">
+    <div class="block block-gallery">
       <stack
         :column-min-width="150"
         :gutter-width="10"
@@ -111,7 +115,7 @@
         </stack-item>
       </stack>
     </div>
-    <div class="block-copyright">
+    <div class="block block-copyright">
       Copyright &#169; 2020 All rights reserved. Eric made with &#129293;
     </div>
   </div>
@@ -166,18 +170,48 @@ export default {
         }
       ]);
     }, 1000);
+
+    let { blockLanding, blockLandingMask } = this.$refs;
+    this.$gsap.to(blockLandingMask, {
+      backgroundColor: "rgb(184, 202, 217)",
+      scrollTrigger: {
+        pin: true,
+        trigger: blockLanding,
+        scrub: true,
+        // markers: true,
+        id: "scrub"
+      }
+    });
+    // this.$gsap.to(blockInvite, {
+    //   backgroundColor: "rgba(201, 214, 225)",
+    //   scrollTrigger: {
+    //     // pin: true,
+    //     start: "top 50%",
+    //     // end: "bottom",
+    //     trigger: blockInvite,
+    //     scrub: true,
+    //     markers: true,
+    //     id: "scrub"
+    //   }
+    // });
   }
 };
 </script>
 
 <style lang="scss">
-$backgroundColor1: #eaeef1;
+$backgroundColor1: rgb(184, 202, 217);
+// rgb(155, 181, 198);
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
 }
+
+.block {
+  padding: 20vh 0;
+}
+
 .block-landing {
   position: relative;
   background-image: url(assets/img/20190830_R7005511.jpeg);
@@ -187,7 +221,7 @@ $backgroundColor1: #eaeef1;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
-  &:after {
+  .mask {
     position: absolute;
     content: "";
     width: 100%;
@@ -195,6 +229,9 @@ $backgroundColor1: #eaeef1;
     top: 0;
     left: 0;
     // box-shadow: 0 0 80px 50px #ffffff inset;
+    background-color: rgba($color: #fff, $alpha: 0);
+  }
+  .shadow {
     box-shadow: 0px -30px 300px 10px #ffffff inset;
   }
   .greet-text {
@@ -206,8 +243,12 @@ $backgroundColor1: #eaeef1;
   }
 }
 .block-invite {
-  background-color: $backgroundColor1;
-  padding: 20vh 0;
+  // background-color: $backgroundColor1;
+  // padding: 20vh 0 0 0;
+  position: relative;
+  top: -100vh;
+  margin-bottom: -100vh;
+  color: white;
   & > div {
     width: 40vw;
     margin: auto;
@@ -241,9 +282,6 @@ $backgroundColor1: #eaeef1;
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 100px;
-    &:last-child {
-      margin-bottom: 0;
-    }
     .column {
       flex: 50%;
       max-width: 50%;
