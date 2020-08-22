@@ -7,12 +7,12 @@
     </div>
     <div class="block block-invite" ref="blockInvite">
       <div>
-        <div class="date">
+        <div class="date" ref="blockInviteDate">
           <div>Saturday</div>
           <div>December 19</div>
           <div>2020</div>
         </div>
-        <div class="text">
+        <div class="text" ref="blockInviteText">
           給每一個曾參與我們成長過程的你們：<br />
           <br />
           歷經了8年的愛情長跑，我們決定對一路從學生時期陪伴的彼此，許下共度餘生的承諾💍<br />
@@ -22,10 +22,10 @@
           也衷心地期盼年底的婚禮可以象徵否極泰來的開始！<br />
           <br />
           在這個對我們來說非常重要的日子，<br />
-          邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。
-        </div>
-        <div class="text rsvp">
+          邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
+          <br />
           <a
+            class="rsvp"
             href="https://www.surveycake.com/s/vrPmp"
             target="_blank"
             rel="noopener noreferrer"
@@ -36,7 +36,7 @@
       </div>
     </div>
     <div class="block block-profile">
-      <div>
+      <div class="aaron">
         <div class="name">Aaron</div>
         <div class="row">
           <div class="column">
@@ -48,7 +48,7 @@
           </div>
         </div>
       </div>
-      <div>
+      <div class="ruby">
         <div class="name" :style="{ textAlign: 'right' }">Ruby</div>
         <div class="row">
           <div class="column">
@@ -59,8 +59,8 @@
             <div class="img img-6" />
           </div>
         </div>
-        <div class="img img-7"></div>
       </div>
+      <div class="img img-7"></div>
     </div>
     <div class="block block-event">
       <div>
@@ -111,7 +111,7 @@
         v-viewer="viewerOptions"
       >
         <stack-item v-for="(src, i) in images" :key="i">
-          <img :src="src" />
+          <img :src="src" class="img" />
         </stack-item>
       </stack>
     </div>
@@ -171,7 +171,13 @@ export default {
       ]);
     }, 1000);
 
-    let { blockLanding, blockLandingMask } = this.$refs;
+    let {
+      blockLanding,
+      blockLandingMask,
+      // blockInvite,
+      blockInviteDate,
+      blockInviteText
+    } = this.$refs;
     this.$gsap.to(blockLandingMask, {
       backgroundColor: "rgb(184, 202, 217)",
       scrollTrigger: {
@@ -182,18 +188,26 @@ export default {
         id: "scrub"
       }
     });
-    // this.$gsap.to(blockInvite, {
-    //   backgroundColor: "rgba(201, 214, 225)",
-    //   scrollTrigger: {
-    //     // pin: true,
-    //     start: "top 50%",
-    //     // end: "bottom",
-    //     trigger: blockInvite,
-    //     scrub: true,
-    //     markers: true,
-    //     id: "scrub"
-    //   }
-    // });
+    this.$gsap.from(blockInviteDate, {
+      opacity: 0,
+      y: 150,
+      scrollTrigger: {
+        trigger: blockInviteDate,
+        start: "top 100%",
+        end: "+=25%",
+        scrub: 1
+      }
+    });
+    this.$gsap.from(blockInviteText, {
+      opacity: 0,
+      y: 150,
+      scrollTrigger: {
+        trigger: blockInviteText,
+        start: "top 100%",
+        end: "+=25%",
+        scrub: 1
+      }
+    });
   }
 };
 </script>
@@ -249,39 +263,60 @@ $backgroundColor1: rgb(184, 202, 217);
   top: -100vh;
   margin-bottom: -100vh;
   color: white;
+  max-height: 100vh;
+  overflow: visible;
+  box-sizing: border-box;
   & > div {
-    width: 40vw;
+    width: 80vw;
     margin: auto;
   }
   .date {
-    font-size: 2rem;
-    margin-bottom: 50px;
-    font-weight: 500;
+    font-size: 8vmin;
+    margin-bottom: 10vh;
+    font-weight: 600;
   }
   .text {
     font-size: 1rem;
-    max-width: 25rem;
+    max-width: 30rem;
     margin-left: auto;
-    margin-bottom: 2rem;
   }
   .rsvp {
     font-weight: 500;
   }
 }
 .block-profile {
+  padding: 0;
   background-color: $backgroundColor1;
   & > div {
-    width: 60vw;
+    width: 80vw;
     margin: auto;
+    // position: relative;
+    // margin-bottom: 40vh;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10vh;
   }
   .name {
-    font-size: 2rem;
-    margin-bottom: 20px;
+    // position: relative;
+    // font-size: 2rem;
+    // margin-bottom: 20px;
+    font-size: 20vmin;
+    // position: absolute;
+    // top: -15vmin;
+    // z-index: 1;
+    // left: -5vw;
+  }
+  .ruby {
+    .name {
+      // left: 5vw;
+    }
   }
   .row {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 100px;
+    // margin-bottom: 100px;
     .column {
       flex: 50%;
       max-width: 50%;
@@ -300,23 +335,23 @@ $backgroundColor1: rgb(184, 202, 217);
   }
   .img-2 {
     margin-bottom: 10px;
-    height: 40vh;
+    height: 40vmin;
     background-image: url(assets/img/20190830_R7005919.jpeg);
   }
   .img-3 {
-    height: 40vh;
+    height: 40vmin;
     background-image: url(assets/img/20190830_R7006012.jpeg);
     background-position: top;
   }
   .img-4 {
     margin-bottom: 10px;
     margin-right: 10px;
-    height: 40vh;
+    height: 40vmin;
     background-image: url(assets/img/20190830_R7005727.jpeg);
   }
   .img-5 {
     margin-right: 10px;
-    height: 40vh;
+    height: 40vmin;
     background-image: url(assets/img/20190830_R7005728.jpeg);
   }
   .img-6 {
@@ -366,7 +401,6 @@ $backgroundColor1: rgb(184, 202, 217);
     }
   }
   .img {
-    border-radius: 5px;
     width: 50%;
     min-width: 300px;
     max-width: 400px;
@@ -425,7 +459,6 @@ $backgroundColor1: rgb(184, 202, 217);
     min-width: 992px;
     .vsg-stack-item img {
       width: 100%;
-      border-radius: 5px;
       cursor: pointer;
       margin-right: 1rem;
     }
