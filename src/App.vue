@@ -120,8 +120,9 @@
 <script>
 import Vara from "vara";
 import { Stack, StackItem } from "vue-stack-grid";
-const gallery = require.context("@/assets/img/gallery");
-const images = gallery.keys().map(key => gallery(key));
+// const gallery = require.context("@/assets/img/gallery");
+// const images = gallery.keys().map(key => gallery(key));
+const images = [];
 
 export default {
   name: "App",
@@ -182,7 +183,7 @@ $backgroundColor1: #eaeef1;
   background-image: url(assets/img/20190830_R7005511.jpeg);
   height: 100vh;
   background-size: cover;
-  background-position: bottom;
+  background-position: bottom right;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -197,7 +198,7 @@ $backgroundColor1: #eaeef1;
     box-shadow: 0px -30px 300px 10px #ffffff inset;
   }
   .greet-text {
-    padding-left: 8%;
+    padding: 0 8%;
     width: 30%;
     svg {
       overflow: visible;
