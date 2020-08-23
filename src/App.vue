@@ -63,42 +63,36 @@
       <div class="img img-7"></div>
     </div>
     <div class="block block-event">
-      <div>
-        <div class="title">Wedding Events</div>
-        <div class="row">
-          <div class="col img event-1">
-            <div class="text event-time">
-              11:00<span class="small">AM</span>
-            </div>
-            <div class="text event-name">#weddingceremony</div>
-          </div>
-          <div class="col img event-2">
-            <div class="text event-time">
-              12:30<span class="small">PM</span>
-            </div>
-            <div class="text event-name">#lunch</div>
-          </div>
+      <div class="title">Wedding Events</div>
+      <div class="row">
+        <div class="col img event-1">
+          <div class="text event-time">11:00<span class="small">AM</span></div>
+          <div class="text event-name">#weddingceremony</div>
         </div>
-        <div class="location">
-          <div class="caption">THE VENUE</div>
-          <div class="venue">
-            <a
-              href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              陽明山中國麗緻飯店
-            </a>
-          </div>
-          <div class="address">
-            <a
-              href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <font-awesome-icon icon="map-marker-alt" />台北市士林區格致路237號
-            </a>
-          </div>
+        <div class="col img event-2">
+          <div class="text event-time">12:30<span class="small">PM</span></div>
+          <div class="text event-name">#lunch</div>
+        </div>
+      </div>
+      <div class="location">
+        <div class="caption">THE VENUE</div>
+        <div class="venue">
+          <a
+            href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            陽明山中國麗緻飯店
+          </a>
+        </div>
+        <div class="address">
+          <a
+            href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <font-awesome-icon icon="map-marker-alt" />台北市士林區格致路237號
+          </a>
         </div>
       </div>
     </div>
@@ -296,7 +290,7 @@ $backgroundColor1: rgb(184, 202, 217);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 10vh;
+    padding: 10vh 0;
   }
   .name {
     // position: relative;
@@ -366,16 +360,15 @@ $backgroundColor1: rgb(184, 202, 217);
   }
 }
 .block-event {
-  padding: 20vh 0;
+  padding: 20vh 10vw;
   background-color: rgba(245, 226, 228, 0.5);
   // background-color: #f6efef;
-  & > div {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    & > div:not(:last-child) {
-      margin-bottom: 100px;
-    }
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & > div:not(:last-child) {
+    margin-bottom: 10vh;
   }
   .title {
     text-align: center;
@@ -383,52 +376,54 @@ $backgroundColor1: rgb(184, 202, 217);
     font-weight: 500;
   }
   .row {
+    width: 100%;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
     .col {
-      margin: 0 10px;
-      flex: 50%;
-      max-width: 50%;
       box-shadow: 0px 5px 35px rgba(53, 53, 53, 0.06);
-      padding: 30px;
-      display: flex;
+      padding: 10%;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
+      margin-bottom: 10vh;
+      width: 10vw;
+      min-width: 14rem;
+      height: 30vh;
+      min-height: 15rem;
       & > .text {
         font-weight: 600;
         margin-bottom: 5px;
       }
     }
-  }
-  .img {
-    width: 50%;
-    min-width: 300px;
-    max-width: 400px;
-    min-height: 300px;
-    max-height: 400px;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    &.event-1 {
-      background-image: url(assets/img/shardayyy-photography-fJzmPe-a0eU-unsplash.jpg);
+
+    .img {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      &.event-1 {
+        background-image: url(assets/img/shardayyy-photography-fJzmPe-a0eU-unsplash.jpg);
+      }
+      &.event-2 {
+        background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
+      }
     }
-    &.event-2 {
-      background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
+
+    .event-name {
+      padding: 0 10px;
+      border-radius: 5px;
+      font-size: 4vmin;
+      text-decoration: underline;
+      color: #000;
+      background-color: #fff;
     }
-  }
-  .event-name {
-    padding: 0 10px;
-    border-radius: 5px;
-    font-size: 1.5rem;
-    text-decoration: underline;
-    color: #000;
-    background-color: #fff;
-  }
-  .text.event-time {
-    font-size: 2.5rem;
-    color: #fff;
-    .small {
-      font-size: 1.5rem;
+    .text.event-time {
+      font-size: 8vmin;
+      color: #fff;
+      .small {
+        font-size: 5vmin;
+      }
     }
   }
   .location {
