@@ -23,21 +23,12 @@
           <br />
           在這個對我們來說非常重要的日子，<br />
           邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
-          <br />
-          <a
-            class="rsvp"
-            href="https://www.surveycake.com/s/vrPmp"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            RSVP
-          </a>
         </div>
       </div>
     </div>
     <div class="block block-profile">
       <div class="aaron">
-        <div class="name">Aaron</div>
+        <div class="name">@Aaron</div>
         <div class="row">
           <div class="column">
             <div class="img img-1" />
@@ -49,7 +40,7 @@
         </div>
       </div>
       <div class="ruby">
-        <div class="name" :style="{ textAlign: 'right' }">Ruby</div>
+        <div class="name" :style="{ textAlign: 'right' }">@Ruby</div>
         <div class="row">
           <div class="column">
             <div class="img img-4" />
@@ -63,7 +54,30 @@
       <div class="img img-7"></div>
     </div>
     <div class="block block-event">
-      <div class="title">Wedding Events</div>
+      <!-- <div class="title">Wedding Events</div> -->
+
+      <div class="location">
+        <div class="caption">THE VENUE</div>
+        <div class="venue">
+          <a
+            href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <font-awesome-icon icon="map-marker-alt" />陽明山中國麗緻飯店
+          </a>
+        </div>
+        <div class="address">
+          <a
+            href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            台北市士林區格致路237號
+          </a>
+        </div>
+      </div>
+
       <div class="row">
         <div class="col img event-1">
           <div class="text event-time">11:00<span class="small">AM</span></div>
@@ -74,26 +88,18 @@
           <div class="text event-name">#lunch</div>
         </div>
       </div>
-      <div class="location">
-        <div class="caption">THE VENUE</div>
-        <div class="venue">
-          <a
-            href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            陽明山中國麗緻飯店
-          </a>
-        </div>
-        <div class="address">
-          <a
-            href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <font-awesome-icon icon="map-marker-alt" />台北市士林區格致路237號
-          </a>
-        </div>
+
+      <div :style="{ textAlign: 'center' }">
+        <div style="font-size: 6vmin" class="mb-1vh">2020/12/19</div>
+        <a
+          class="rsvp"
+          href="https://www.surveycake.com/s/vrPmp"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="font-size: 4vmin"
+        >
+          RSVP
+        </a>
       </div>
     </div>
     <div class="block block-gallery">
@@ -110,7 +116,8 @@
       </stack>
     </div>
     <div class="block block-copyright">
-      Copyright &#169; 2020 All rights reserved. Eric made with &#129293;
+      <div>Copyright &#169; 2020 All rights reserved.</div>
+      <div>Eric made with &#129293;</div>
     </div>
   </div>
 </template>
@@ -363,16 +370,19 @@ $backgroundColor1: rgb(184, 202, 217);
   padding: 20vh 10vw;
   background-color: rgba(245, 226, 228, 0.5);
   // background-color: #f6efef;
-
   display: flex;
   align-items: center;
   flex-direction: column;
   & > div:not(:last-child) {
     margin-bottom: 10vh;
   }
+
+  .mb-1vh {
+    margin-bottom: 1vh;
+  }
   .title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 10vmin;
     font-weight: 500;
   }
   .row {
@@ -429,18 +439,17 @@ $backgroundColor1: rgb(184, 202, 217);
   .location {
     text-align: center;
     .caption {
-      margin-bottom: 10px;
+      font-size: 3vmin;
       font-weight: 600;
     }
     .venue {
-      font-size: 1.8rem;
-      margin-bottom: 5px;
+      font-size: 6vmin;
+      svg {
+        margin-right: 1vmin;
+      }
     }
     .address {
-      font-size: 0.9rem;
-      svg {
-        margin-right: 5px;
-      }
+      font-size: 2vmin;
     }
   }
 }
@@ -461,7 +470,8 @@ $backgroundColor1: rgb(184, 202, 217);
 }
 
 .block-copyright {
-  padding: 1rem;
+  font-size: 1rem;
+  padding: 1rem 3rem;
   text-align: center;
   color: #dadada;
 }
