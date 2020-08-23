@@ -177,7 +177,7 @@ export default {
         // markers: true,
         pin: true,
         trigger: blockLanding,
-        scrub: 1
+        scrub: 3
       }
     });
     let { blockInvite, blockInviteDate, blockInviteText } = this.$refs;
