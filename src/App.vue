@@ -172,43 +172,35 @@ export default {
       ]);
     }, 1000);
 
-    let {
-      blockLanding,
-      blockLandingMask,
-      // blockInvite,
-      blockInviteDate,
-      blockInviteText
-    } = this.$refs;
+    let { blockLanding, blockLandingMask } = this.$refs;
     this.$gsap.to(blockLandingMask, {
       backgroundColor: "rgb(184, 202, 217)",
       scrollTrigger: {
+        // markers: true,
         pin: true,
         trigger: blockLanding,
-        scrub: true,
-        // markers: true,
-        id: "scrub"
-      }
-    });
-    this.$gsap.from(blockInviteDate, {
-      opacity: 0,
-      y: 150,
-      scrollTrigger: {
-        trigger: blockInviteDate,
-        start: "top 100%",
-        end: "+=25%",
         scrub: 1
       }
     });
-    this.$gsap.from(blockInviteText, {
-      opacity: 0,
-      y: 150,
-      scrollTrigger: {
-        trigger: blockInviteText,
-        start: "top 100%",
-        end: "+=25%",
-        scrub: 1
-      }
-    });
+    let { blockInvite, blockInviteDate, blockInviteText } = this.$refs;
+    this.$gsap
+      .timeline({
+        scrollTrigger: {
+          trigger: blockInvite,
+          start: "top 100%",
+          end: "bottom 90%",
+          // markers: true,
+          scrub: 1
+        }
+      })
+      .from(blockInviteDate, {
+        opacity: 0,
+        y: innerHeight / 3
+      })
+      .from(blockInviteText, {
+        opacity: 0,
+        y: innerHeight / 3
+      });
   }
 };
 </script>
@@ -258,13 +250,11 @@ $backgroundColor1: rgb(184, 202, 217);
   }
 }
 .block-invite {
-  // background-color: $backgroundColor1;
-  // padding: 20vh 0 0 0;
-  position: relative;
-  top: -100vh;
-  margin-bottom: -100vh;
-  color: white;
-  max-height: 100vh;
+  position: absolute;
+  top: 110vh;
+  width: 100%;
+  padding: 0;
+  color: #fff;
   overflow: visible;
   box-sizing: border-box;
   & > div {
