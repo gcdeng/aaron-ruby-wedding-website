@@ -24,10 +24,10 @@
         邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
       </div>
     </div>
-    <div class="block block-profile">
-      <div class="aaron">
-        <div class="name">@Aaron</div>
-        <div class="row">
+    <div class="block block-profile" ref="blockProfile">
+      <div class="aaron" ref="blockProfileAaron">
+        <div class="name" ref="blockProfileAaronName">@Aaron</div>
+        <div class="row" ref="blockProfileAaronRow">
           <div class="column">
             <div class="img img-1" />
           </div>
@@ -37,9 +37,15 @@
           </div>
         </div>
       </div>
-      <div class="ruby">
-        <div class="name" :style="{ textAlign: 'right' }">@Ruby</div>
-        <div class="row">
+      <div class="ruby" ref="blockProfileRuby">
+        <div
+          class="name"
+          :style="{ textAlign: 'right' }"
+          ref="blockProfileRubyName"
+        >
+          @Ruby
+        </div>
+        <div class="row" ref="blockProfileRubyRow">
           <div class="column">
             <div class="img img-4" />
             <div class="img img-5" />
@@ -49,7 +55,7 @@
           </div>
         </div>
       </div>
-      <div class="img img-7"></div>
+      <div class="img img-7" ref="blockProfileTransitionImg"></div>
     </div>
     <div class="block block-event">
       <!-- <div class="title">Wedding Events</div> -->
@@ -177,7 +183,7 @@ export default {
         // markers: true,
         pin: true,
         trigger: blockLanding,
-        scrub: 3
+        scrub: 2
       }
     });
     let { blockInvite, blockInviteDate, blockInviteText } = this.$refs;
@@ -199,6 +205,69 @@ export default {
         opacity: 0,
         y: innerHeight / 3
       });
+
+    let {
+      blockProfile,
+      blockProfileAaron,
+      blockProfileAaronName,
+      blockProfileAaronRow,
+      blockProfileRuby,
+      blockProfileRubyName,
+      blockProfileRubyRow,
+      blockProfileTransitionImg
+    } = this.$refs;
+    this.$gsap.to(blockProfile, {
+      backgroundColor: "#fff",
+      duration: 10,
+      scrollTrigger: {
+        start: "top 10%",
+        // markers: true,
+        trigger: blockProfile,
+        scrub: 1
+      }
+    });
+    this.$gsap
+      .timeline({
+        scrollTrigger: {
+          end: "+=90%",
+          trigger: blockProfileAaron,
+          scrub: 1
+        }
+      })
+      .from(blockProfileAaronName, {
+        opacity: 0,
+        x: innerWidth / 2
+      })
+      .from(blockProfileAaronRow, {
+        opacity: 0,
+        x: innerWidth / 2
+      });
+
+    this.$gsap
+      .timeline({
+        scrollTrigger: {
+          end: "+=90%",
+          trigger: blockProfileRuby,
+          scrub: 1
+        }
+      })
+      .from(blockProfileRubyName, {
+        opacity: 0,
+        x: (innerWidth / 2) * -1
+      })
+      .from(blockProfileRubyRow, {
+        opacity: 0,
+        x: (innerWidth / 2) * -1
+      });
+
+    this.$gsap.to(blockProfileTransitionImg, {
+      scale: 1.5,
+      scrollTrigger: {
+        // markers: true,
+        trigger: blockProfileTransitionImg,
+        scrub: 2
+      }
+    });
   }
 };
 </script>
@@ -214,7 +283,7 @@ $backgroundColor1: rgb(184, 202, 217);
 }
 
 .block {
-  padding: 20vh 0;
+  padding: 20vh 10vw;
 }
 
 .block-landing {
@@ -252,7 +321,6 @@ $backgroundColor1: rgb(184, 202, 217);
   top: 110vh;
   width: 100%;
   color: #fff;
-  overflow: visible;
   box-sizing: border-box;
   padding: 0 10vw;
   .date {
@@ -270,48 +338,33 @@ $backgroundColor1: rgb(184, 202, 217);
   }
 }
 .block-profile {
-  padding: 0;
+  padding: 0 10vw 20vh 10vw;
   background-color: $backgroundColor1;
+  overflow: hidden;
   & > div {
-    width: 80vw;
-    margin: auto;
-    // position: relative;
-    // margin-bottom: 40vh;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10vh 0;
+    padding: 1vh 0;
+    // box-sizing: border-box;
   }
   .name {
-    // position: relative;
-    // font-size: 2rem;
-    // margin-bottom: 20px;
-    font-size: 20vmin;
-    // position: absolute;
-    // top: -15vmin;
-    // z-index: 1;
-    // left: -5vw;
+    font-size: 15vmin;
   }
-  .ruby {
-    .name {
-      // left: 5vw;
-    }
+  .ruby .name {
+    color: rgba(245, 226, 228);
   }
   .row {
     display: flex;
-    flex-wrap: wrap;
-    // margin-bottom: 100px;
     .column {
       flex: 50%;
-      max-width: 50%;
     }
   }
   .img {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    position: relative;
   }
   .img-1 {
     margin-right: 10px;
@@ -345,13 +398,17 @@ $backgroundColor1: rgb(184, 202, 217);
     background-position: bottom;
   }
   .img-7 {
-    width: 100%;
+    margin-top: 15vh;
+    padding: 0;
     height: 150vh;
     background-image: url(assets/img/20190830_R7005505.jpeg);
+    width: 100vw;
+    position: relative;
+    left: -10vw;
+    background-position: bottom;
   }
 }
 .block-event {
-  padding: 20vh 10vw;
   background-color: rgba(245, 226, 228, 0.5);
   // background-color: #f6efef;
   display: flex;
