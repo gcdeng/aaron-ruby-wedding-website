@@ -228,42 +228,44 @@ export default {
     });
     this.$gsap
       .timeline({
+        defaults: {
+          opacity: 0,
+          x: (innerWidth / 5) * 1
+        },
         scrollTrigger: {
-          end: "+=90%",
+          // markers: true,
+          start: "top bottom",
+          end: "+=40%",
           trigger: blockProfileAaron,
           scrub: 1
         }
       })
-      .from(blockProfileAaronName, {
-        opacity: 0,
-        x: innerWidth / 2
-      })
-      .from(blockProfileAaronRow, {
-        opacity: 0,
-        x: innerWidth / 2
-      });
+      .from(blockProfileAaronName, {})
+      .from(blockProfileAaronRow, {});
 
     this.$gsap
       .timeline({
+        defaults: {
+          opacity: 0,
+          x: (innerWidth / 5) * -1
+        },
         scrollTrigger: {
-          end: "+=90%",
+          // markers: true,
+          start: "top bottom",
+          end: "+=40%",
           trigger: blockProfileRuby,
           scrub: 1
         }
       })
-      .from(blockProfileRubyName, {
-        opacity: 0,
-        x: (innerWidth / 2) * -1
-      })
-      .from(blockProfileRubyRow, {
-        opacity: 0,
-        x: (innerWidth / 2) * -1
-      });
+      .from(blockProfileRubyName, {})
+      .from(blockProfileRubyRow, {});
 
     this.$gsap.to(blockProfileTransitionImg, {
       scale: 1.5,
       scrollTrigger: {
         // markers: true,
+        start: "top 80%",
+        end: "bottom 80%",
         trigger: blockProfileTransitionImg,
         scrub: 2
       }
@@ -342,12 +344,11 @@ $backgroundColor1: rgb(184, 202, 217);
   background-color: $backgroundColor1;
   overflow: hidden;
   & > div {
-    height: 100vh;
+    height: 100vmin;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 1vh 0;
-    // box-sizing: border-box;
+    margin-top: 10vmin;
   }
   .name {
     font-size: 15vmin;
@@ -398,8 +399,7 @@ $backgroundColor1: rgb(184, 202, 217);
     background-position: bottom;
   }
   .img-7 {
-    margin-top: 15vh;
-    padding: 0;
+    margin-top: 50vmin;
     height: 150vh;
     background-image: url(assets/img/20190830_R7005505.jpeg);
     width: 100vw;
