@@ -230,7 +230,7 @@ export default {
       .timeline({
         defaults: {
           opacity: 0,
-          x: (innerWidth / 5) * 1
+          x: (innerWidth / 10) * 1
         },
         scrollTrigger: {
           // markers: true,
@@ -247,7 +247,7 @@ export default {
       .timeline({
         defaults: {
           opacity: 0,
-          x: (innerWidth / 5) * -1
+          x: (innerWidth / 10) * -1
         },
         scrollTrigger: {
           // markers: true,
