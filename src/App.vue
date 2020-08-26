@@ -6,12 +6,12 @@
       <div ref="blockLandingMask" class="mask"></div>
     </div>
     <div class="block block-invite" ref="blockInvite">
-      <div class="date" ref="blockInviteDate">
+      <div class="date">
         <div>Saturday</div>
         <div>December 19</div>
         <div>2020</div>
       </div>
-      <div class="text" ref="blockInviteText">
+      <div class="text">
         給每一個曾參與我們成長過程的你們：<br />
         <br />
         歷經了8年的愛情長跑，我們決定對一路從學生時期陪伴的彼此，許下共度餘生的承諾💍<br />
@@ -186,25 +186,18 @@ export default {
         scrub: 2
       }
     });
-    let { blockInvite, blockInviteDate, blockInviteText } = this.$refs;
-    this.$gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: blockInvite,
-          start: "top 100%",
-          end: "bottom 90%",
-          // markers: true,
-          scrub: 1
-        }
-      })
-      .from(blockInviteDate, {
-        opacity: 0,
-        y: innerHeight / 3
-      })
-      .from(blockInviteText, {
-        opacity: 0,
-        y: innerHeight / 3
-      });
+    let { blockInvite } = this.$refs;
+    this.$gsap.from(blockInvite, {
+      opacity: 0,
+      y: 10,
+      scrollTrigger: {
+        trigger: blockInvite,
+        start: "top 100%",
+        end: "bottom 100%",
+        markers: true,
+        scrub: 1
+      }
+    });
 
     let {
       blockProfile,
