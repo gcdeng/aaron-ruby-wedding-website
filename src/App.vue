@@ -269,8 +269,8 @@ export default {
         // markers: true,
         start: "top bottom",
         end: "bottom top",
-        trigger: blockProfileTransitionImg
-        // scrub: 1
+        trigger: blockProfileTransitionImg,
+        scrub: 1
       }
     });
     this.$gsap.to(blockProfileTransitionImgMask, {
