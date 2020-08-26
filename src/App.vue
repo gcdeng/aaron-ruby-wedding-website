@@ -55,7 +55,9 @@
           </div>
         </div>
       </div>
-      <div class="img img-7" ref="blockProfileTransitionImg"></div>
+      <div class="img img-transition" ref="blockProfileTransitionImg">
+        <div class="mask" ref="blockProfileTransitionImgMask"></div>
+      </div>
     </div>
     <div class="block block-event">
       <!-- <div class="title">Wedding Events</div> -->
@@ -194,7 +196,7 @@ export default {
         trigger: blockInvite,
         start: "top 100%",
         end: "bottom 100%",
-        markers: true,
+        // markers: true,
         scrub: 1
       }
     });
@@ -207,11 +209,11 @@ export default {
       blockProfileRuby,
       blockProfileRubyName,
       blockProfileRubyRow,
-      blockProfileTransitionImg
+      blockProfileTransitionImg,
+      blockProfileTransitionImgMask
     } = this.$refs;
     this.$gsap.to(blockProfile, {
       backgroundColor: "#fff",
-      duration: 10,
       scrollTrigger: {
         start: "top 10%",
         // markers: true,
@@ -256,11 +258,22 @@ export default {
     this.$gsap.to(blockProfileTransitionImg, {
       scale: 1.5,
       scrollTrigger: {
-        // markers: true,
-        start: "top 80%",
-        end: "bottom 80%",
+        markers: true,
+        start: "top bottom",
+        end: "bottom top",
         trigger: blockProfileTransitionImg,
         scrub: 2
+      }
+    });
+    this.$gsap.to(blockProfileTransitionImgMask, {
+      backgroundColor: "rgba(255, 255, 255, 0.5)",
+      scrollTrigger: {
+        markers: true,
+        start: "top top",
+        end: "bottom top",
+        trigger: blockProfileTransitionImg,
+        scrub: 2,
+        pin: true
       }
     });
   }
@@ -391,14 +404,19 @@ $backgroundColor1: rgb(184, 202, 217);
     background-image: url(assets/img/20190830_R7005743.jpeg);
     background-position: bottom;
   }
-  .img-7 {
+  .img-transition {
     margin-top: 50vmin;
-    height: 150vh;
+    height: 100vh;
     background-image: url(assets/img/20190830_R7005505.jpeg);
     width: 100vw;
     position: relative;
     left: -10vw;
     background-position: bottom;
+    .mask {
+      width: 100%;
+      height: 100%;
+      background-color: rgba($color: #fff, $alpha: 0);
+    }
   }
 }
 .block-event {
