@@ -22,6 +22,15 @@
         <br />
         在這個對我們來說非常重要的日子，<br />
         邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
+        <br />
+        <a
+          class="rsvp"
+          href="https://www.surveycake.com/s/vrPmp"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          RSVP
+        </a>
       </div>
     </div>
     <div class="block block-profile" ref="blockProfile">
