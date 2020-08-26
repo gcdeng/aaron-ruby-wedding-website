@@ -62,8 +62,8 @@
     <div class="block block-event">
       <!-- <div class="title">Wedding Events</div> -->
 
-      <div class="location">
-        <div class="caption">THE VENUE</div>
+      <div class="location" ref="blockEventLocation">
+        <!-- <div class="caption">THE VENUE</div> -->
         <div class="venue">
           <a
             href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
@@ -83,8 +83,16 @@
           </a>
         </div>
       </div>
+      <div class="event" ref="blockEvent1">
+        <div class="text event-time">11:00<span class="small">AM</span></div>
+        <div class="text event-name">#weddingceremony</div>
+      </div>
+      <div class="event" ref="blockEvent2">
+        <div class="text event-time">12:30<span class="small">PM</span></div>
+        <div class="text event-name">#lunch</div>
+      </div>
 
-      <div class="row">
+      <!-- <div class="row">
         <div class="col img event-1">
           <div class="text event-time">11:00<span class="small">AM</span></div>
           <div class="text event-name">#weddingceremony</div>
@@ -93,9 +101,9 @@
           <div class="text event-time">12:30<span class="small">PM</span></div>
           <div class="text event-name">#lunch</div>
         </div>
-      </div>
+      </div> -->
 
-      <div :style="{ textAlign: 'center' }">
+      <!-- <div :style="{ textAlign: 'center' }">
         <div style="font-size: 6vmin" class="mb-1vh">2020/12/19</div>
         <a
           class="rsvp"
@@ -106,9 +114,9 @@
         >
           RSVP
         </a>
-      </div>
+      </div> -->
     </div>
-    <div class="block block-gallery">
+    <div class="block block-gallery" ref="blockGallery">
       <stack
         :column-min-width="150"
         :gutter-width="10"
@@ -131,9 +139,9 @@
 <script>
 import Vara from "vara";
 import { Stack, StackItem } from "vue-stack-grid";
-// const gallery = require.context("@/assets/img/gallery");
-// const images = gallery.keys().map(key => gallery(key));
-const images = [];
+const gallery = require.context("@/assets/img/gallery");
+const images = gallery.keys().map(key => gallery(key));
+// const images = [];
 
 export default {
   name: "App",
@@ -256,24 +264,71 @@ export default {
       .from(blockProfileRubyRow, {});
 
     this.$gsap.to(blockProfileTransitionImg, {
-      scale: 1.5,
+      scale: 1.3,
       scrollTrigger: {
-        markers: true,
+        // markers: true,
         start: "top bottom",
         end: "bottom top",
-        trigger: blockProfileTransitionImg,
-        scrub: 2
+        trigger: blockProfileTransitionImg
+        // scrub: 1
       }
     });
     this.$gsap.to(blockProfileTransitionImgMask, {
       backgroundColor: "rgba(255, 255, 255, 0.5)",
       scrollTrigger: {
-        markers: true,
+        // markers: true,
         start: "top top",
         end: "bottom top",
         trigger: blockProfileTransitionImg,
-        scrub: 2,
+        scrub: 1,
         pin: true
+      }
+    });
+
+    let { blockEventLocation, blockEvent1, blockEvent2 } = this.$refs;
+    this.$gsap.from(blockEventLocation, {
+      opacity: 0,
+      scrollTrigger: {
+        // markers: true,
+        start: "top 95%",
+        end: "+=30%",
+        trigger: blockEventLocation,
+        scrub: 1
+      }
+    });
+    this.$gsap.from(blockEvent1, {
+      opacity: 0,
+      scrollTrigger: {
+        // markers: true,
+        start: "top 95%",
+        end: "+=30%",
+        trigger: blockEvent1,
+        scrub: 1
+      }
+    });
+    this.$gsap.from(blockEvent2, {
+      opacity: 0,
+      scrollTrigger: {
+        // markers: true,
+        start: "top 95%",
+        end: "+=30%",
+        trigger: blockEvent2,
+        scrub: 1
+      }
+    });
+
+    let { blockGallery } = this.$refs;
+
+    this.$gsap.from(blockGallery, {
+      opacity: 0,
+      duration: 4,
+      scrollTrigger: {
+        // markers: true,
+        start: "top bottom",
+        end: "bottom bottom",
+        trigger: blockGallery,
+        // scrub: 1,
+        toggleActions: "play none none none"
       }
     });
   }
@@ -411,7 +466,7 @@ $backgroundColor1: rgb(184, 202, 217);
     width: 100vw;
     position: relative;
     left: -10vw;
-    background-position: bottom;
+    background-position: center;
     .mask {
       width: 100%;
       height: 100%;
@@ -420,72 +475,85 @@ $backgroundColor1: rgb(184, 202, 217);
   }
 }
 .block-event {
-  background-color: rgba(245, 226, 228, 0.5);
+  padding: 0;
+  position: relative;
+  margin-top: -100vh;
+  height: 100vh;
+  // background-color: rgba(245, 226, 228, 0.5);
   // background-color: #f6efef;
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
   & > div:not(:last-child) {
     margin-bottom: 10vh;
   }
 
-  .mb-1vh {
-    margin-bottom: 1vh;
+  // .mb-1vh {
+  //   margin-bottom: 1vh;
+  // }
+  // .title {
+  //   text-align: center;
+  //   font-size: 10vmin;
+  //   font-weight: 500;
+  // }
+  .text {
+    font-weight: 600;
+    // margin-bottom: 5px;
   }
-  .title {
-    text-align: center;
-    font-size: 10vmin;
-    font-weight: 500;
-  }
-  .row {
-    width: 100%;
+  // .row {
+  //   width: 100%;
+  //   display: flex;
+  //   flex-wrap: wrap;
+  //   justify-content: space-evenly;
+  //   .col {
+  //     box-shadow: 0px 5px 35px rgba(53, 53, 53, 0.06);
+  //     padding: 10%;
+  //     display: inline-flex;
+  //     align-items: center;
+  //     justify-content: center;
+  //     flex-direction: column;
+  //     margin-bottom: 10vh;
+  //     width: 10vw;
+  //     min-width: 14rem;
+  //     height: 30vh;
+  //     min-height: 15rem;
+  //     & > .text {
+  //       font-weight: 600;
+  //       margin-bottom: 5px;
+  //     }
+  //   }
+
+  //   .img {
+  //     background-size: cover;
+  //     background-repeat: no-repeat;
+  //     background-position: center;
+  //     &.event-1 {
+  //       background-image: url(assets/img/shardayyy-photography-fJzmPe-a0eU-unsplash.jpg);
+  //     }
+  //     &.event-2 {
+  //       background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
+  //     }
+  //   }
+  // }
+  .event {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    .col {
-      box-shadow: 0px 5px 35px rgba(53, 53, 53, 0.06);
-      padding: 10%;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      margin-bottom: 10vh;
-      width: 10vw;
-      min-width: 14rem;
-      height: 30vh;
-      min-height: 15rem;
-      & > .text {
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
-    }
-
-    .img {
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      &.event-1 {
-        background-image: url(assets/img/shardayyy-photography-fJzmPe-a0eU-unsplash.jpg);
-      }
-      &.event-2 {
-        background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
-      }
-    }
-
-    .event-name {
-      padding: 0 10px;
-      border-radius: 5px;
-      font-size: 4vmin;
-      text-decoration: underline;
-      color: #000;
-      background-color: #fff;
-    }
-    .text.event-time {
-      font-size: 8vmin;
-      color: #fff;
-      .small {
-        font-size: 5vmin;
-      }
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-name {
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 4vmin;
+    text-decoration: underline;
+    color: #000;
+    background-color: #fff;
+  }
+  .event-time {
+    font-size: 8vmin;
+    color: #fff;
+    .small {
+      font-size: 5vmin;
     }
   }
   .location {
