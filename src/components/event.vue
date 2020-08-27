@@ -6,7 +6,7 @@
       <!-- <div class="caption">THE VENUE</div> -->
       <div class="venue">
         <a
-          href="http://yangmingshan.landishotelsresorts.com/chinese-trad/"
+          href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
           target="_blank"
           rel="noopener noreferrer"
         >
