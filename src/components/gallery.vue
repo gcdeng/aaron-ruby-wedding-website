@@ -1,7 +1,7 @@
 <template>
   <div class="block block-gallery" ref="blockGallery">
     <stack
-      :column-min-width="150"
+      :column-min-width="columnMinWidth"
       :gutter-width="10"
       :gutter-height="5"
       monitor-images-loaded
@@ -24,6 +24,7 @@ export default {
   name: "Gallery",
   components: { Stack, StackItem },
   data() {
+    let columnMinWidth = innerWidth > 768 ? 150 : 100;
     return {
       viewerOptions: {
         button: false,
@@ -43,6 +44,7 @@ export default {
           next: 2
         }
       },
+      columnMinWidth,
       images
     };
   },
@@ -66,16 +68,21 @@ export default {
 <style lang="scss" scoped>
 .block-gallery {
   overflow-x: scroll;
-  padding: 10vh 1rem;
+  padding: 5vh 1rem;
   &::-webkit-scrollbar {
     display: none;
   }
   .vsg-container {
-    min-width: 992px;
+    min-width: 768px;
     .vsg-stack-item img {
       width: 100%;
       cursor: pointer;
       margin-right: 1rem;
+    }
+  }
+  @media (min-width: 768px) {
+    .vsg-container {
+      min-width: 992px;
     }
   }
 }

@@ -51,7 +51,7 @@ export default {
   height: 100vh;
   background-image: url(../assets/img/20190830_R7005511.jpeg);
   background-size: cover;
-  background-position: bottom 0 right -230px;
+  background-position: bottom 0 right -250px;
   background-repeat: no-repeat;
   display: flex;
   align-items: flex-start;

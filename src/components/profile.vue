@@ -95,13 +95,14 @@ export default {
       .from(blockProfileRubyRow, {});
 
     this.$gsap.to(blockProfileTransitionImg, {
-      scale: 1.2,
+      scale: 1.1,
       scrollTrigger: {
         // markers: true,
         start: "top bottom",
         end: "bottom top",
         trigger: blockProfileTransitionImg,
-        scrub: 1
+        scrub: 2,
+        toggleActions: "play none none none"
       }
     });
     this.$gsap.to(blockProfileTransitionImgMask, {

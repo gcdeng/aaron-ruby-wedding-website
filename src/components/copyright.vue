@@ -1,7 +1,7 @@
 <template>
   <div class="block block-copyright">
-    <div>Copyright &#169; 2020 All rights reserved.</div>
     <div>Eric made with &#129293;</div>
+    <div>Copyright &#169; 2020 All rights reserved.</div>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {};
 
 <style lang="scss" scoped>
 .block-copyright {
-  font-size: 1rem;
+  font-size: 0.8rem;
   padding: 1rem 3rem;
   text-align: center;
   color: #dadada;
