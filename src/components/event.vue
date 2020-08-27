@@ -25,11 +25,11 @@
     </div>
     <div class="event" ref="blockEvent1">
       <div class="text event-time">11:00<span class="small">AM</span></div>
-      <div class="text event-name">#weddingceremony</div>
+      <div class="text event-name">#戶外證婚派對</div>
     </div>
     <div class="event" ref="blockEvent2">
       <div class="text event-time">12:30<span class="small">PM</span></div>
-      <div class="text event-name">#lunch</div>
+      <div class="text event-name">#午宴</div>
     </div>
 
     <!-- <div class="row">
