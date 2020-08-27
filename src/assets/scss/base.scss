@@ -1,8 +1,18 @@
+@font-face {
+  font-family: 'Noto Sans TC Light';
+  src: url('../font/Noto_Sans_TC/NotoSansTC-Light.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('../font/Dancing_Script/static/DancingScript-Regular.ttf') format('truetype');
+}
 body {
   margin: 0;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Noto Sans TC Light, Avenir, Helvetica, Arial, sans-serif;
+  // -webkit-font-smoothing: antialiased;
+  // -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
   color: #2c3e50;
 }
 a {
