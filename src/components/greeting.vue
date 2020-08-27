@@ -11,19 +11,25 @@ import Vara from "vara";
 export default {
   name: "Greeting",
   mounted() {
-    const varaFontJsonPath =
-      "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json";
-    new Vara(".block-greeting .text", varaFontJsonPath, [
+    new Vara(
+      ".block-greeting .text",
+      "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json",
+      [
+        {
+          text: "Invite you to our wedding party",
+          fontSize: innerWidth > 768 ? 40 : 30
+        },
+        {
+          text: "Aaron & Ruby",
+          fontSize: innerWidth > 768 ? 30 : 16,
+          textAlign: "right"
+        }
+      ],
       {
-        text: "Invite you to our wedding party",
-        fontSize: innerWidth > 768 ? 40 : 30
-      },
-      {
-        text: "Aaron & Ruby",
-        fontSize: innerWidth > 768 ? 30 : 16,
-        textAlign: "right"
+        strokeWidth: 1, // Width / Thickness of the stroke
+        color: "#2c3e50" // Color of the text
       }
-    ]);
+    );
 
     let { blockGreeting, blockGreetingMask } = this.$refs;
     this.$gsap.to(blockGreetingMask, {
@@ -63,7 +69,7 @@ export default {
     box-shadow: 0px -30px 300px 10px #ffffff inset;
   }
   .text {
-    padding: 20% 10%;
+    padding: 15vh 10vw;
     width: 100vw;
     svg {
       overflow: visible;

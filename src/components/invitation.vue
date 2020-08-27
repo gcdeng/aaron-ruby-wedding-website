@@ -55,18 +55,20 @@ export default {
   position: absolute;
   top: 110vh;
   width: 100%;
-  color: #fff;
   box-sizing: border-box;
   padding: 0 10vw;
   .date {
-    font-size: 8vmin;
-    margin-bottom: 10vh;
+    font-size: 3rem;
+    margin-bottom: 5vh;
     font-weight: 600;
+    font-family: "Dancing Script";
   }
   .text {
     font-size: 1rem;
     max-width: 30rem;
     margin-left: auto;
+    line-height: 1.6;
+    color: #fff;
   }
 
   .fillin-link-effect {

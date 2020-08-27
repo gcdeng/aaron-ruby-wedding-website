@@ -66,7 +66,7 @@ export default {
 <style lang="scss" scoped>
 .block-gallery {
   overflow-x: scroll;
-  padding: 20vh 1rem 10vh 1rem;
+  padding: 10vh 1rem;
   &::-webkit-scrollbar {
     display: none;
   }

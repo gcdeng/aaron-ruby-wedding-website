@@ -13,7 +13,7 @@
           <font-awesome-icon icon="map-marker-alt" />陽明山中國麗緻飯店
         </a>
       </div>
-      <div class="address">
+      <!-- <div class="address">
         <a
           href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
           target="_blank"
@@ -21,15 +21,15 @@
         >
           台北市士林區格致路237號
         </a>
-      </div>
+      </div> -->
     </div>
     <div class="event" ref="blockEvent1">
-      <div class="text event-time">11:00<span class="small">AM</span></div>
-      <div class="text event-name">#戶外證婚派對</div>
+      <div class="event-time">11:00<span class="small">AM</span></div>
+      <div class="event-name">#戶外證婚派對</div>
     </div>
     <div class="event" ref="blockEvent2">
-      <div class="text event-time">12:30<span class="small">PM</span></div>
-      <div class="text event-name">#午宴</div>
+      <div class="event-time">12:30<span class="small">PM</span></div>
+      <div class="event-name">#午宴</div>
     </div>
 
     <!-- <div class="row">
@@ -86,32 +86,54 @@ export default {
 
 <style lang="scss" scoped>
 .block-event {
-  padding: 0;
   position: relative;
   margin-top: -100vh;
   height: 100vh;
-  // background-color: rgba(245, 226, 228, 0.5);
-  // background-color: #f6efef;
   display: flex;
   align-items: center;
   flex-direction: column;
-  text-align: center;
-  & > div:not(:last-child) {
-    margin-bottom: 10vh;
-  }
-
-  // .mb-1vh {
+  font-weight: 600;
+  font-size: 1.5rem;
+  // & > div:not(:last-child) {
   //   margin-bottom: 1vh;
   // }
+  .location {
+    // .caption {
+    //   font-weight: 600;
+    // }
+    .venue {
+      svg {
+        margin-right: 5px;
+      }
+    }
+    // .address {
+    //   font-weight: normal;
+    // }
+  }
+  .event {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .event-time {
+    .small {
+      font-size: 1.2rem;
+    }
+  }
+  .event-name {
+    padding: 0 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    text-decoration: underline;
+    background-color: rgba(44, 62, 80, 0.5);
+    color: white;
+  }
+
   // .title {
   //   text-align: center;
   //   font-size: 10vmin;
   //   font-weight: 500;
   // }
-  .text {
-    font-weight: 600;
-    // margin-bottom: 5px;
-  }
   // .row {
   //   width: 100%;
   //   display: flex;
@@ -147,41 +169,5 @@ export default {
   //     }
   //   }
   // }
-  .event {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .event-name {
-    padding: 0 10px;
-    border-radius: 5px;
-    font-size: 4vmin;
-    text-decoration: underline;
-    color: #000;
-    background-color: #fff;
-  }
-  .event-time {
-    font-size: 8vmin;
-    color: #fff;
-    .small {
-      font-size: 5vmin;
-    }
-  }
-  .location {
-    text-align: center;
-    .caption {
-      font-size: 3vmin;
-      font-weight: 600;
-    }
-    .venue {
-      font-size: 6vmin;
-      svg {
-        margin-right: 1vmin;
-      }
-    }
-    .address {
-      font-size: 2vmin;
-    }
-  }
 }
 </style>

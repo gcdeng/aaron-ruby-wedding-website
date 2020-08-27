@@ -131,10 +131,11 @@ $imgPath: "~@/assets/img/";
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10vmin;
+    margin-top: 10vh;
   }
   .name {
-    font-size: 15vmin;
+    font-size: 3.5rem;
+    font-family: "Dancing Script";
   }
   .ruby .name {
     color: rgba(245, 226, 228);
@@ -182,12 +183,12 @@ $imgPath: "~@/assets/img/";
     background-position: bottom;
   }
   .img-transition {
-    margin-top: 50vmin;
+    margin-top: 20vh;
     height: 100vh;
-    background-image: url($imgPath+"20190830_R7005505.jpeg");
     width: 100vw;
     position: relative;
     left: -10vw;
+    background-image: url($imgPath+"20190830_R7005505.jpeg");
     background-position: center;
     .mask {
       width: 100%;
