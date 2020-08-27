@@ -18,7 +18,8 @@
       邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
       <br />
       <a
-        class="rsvp"
+        class="fillin-link-effect"
+        :style="{ fontWeight: 500 }"
         href="https://www.surveycake.com/s/vrPmp"
         target="_blank"
         rel="noopener noreferrer"
@@ -67,8 +68,31 @@ export default {
     max-width: 30rem;
     margin-left: auto;
   }
-  .rsvp {
-    font-weight: 500;
+
+  .fillin-link-effect {
+    padding-bottom: 5px;
+    color: #ffffff;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 100%;
+      background: #fff;
+      height: 2px;
+      -webkit-transition-property: right;
+      transition-property: right;
+      -webkit-transition-duration: 0.5s;
+      transition-duration: 0.5s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+    &:hover {
+      &::before {
+        right: 0;
+      }
+    }
   }
 }
 </style>
