@@ -19,7 +19,7 @@
       <br />
       <a
         class="fillin-link-effect"
-        :style="{ fontWeight: 500 }"
+        :style="{ fontWeight: 600 }"
         href="https://www.surveycake.com/s/vrPmp"
         target="_blank"
         rel="noopener noreferrer"

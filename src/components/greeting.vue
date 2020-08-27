@@ -13,19 +13,17 @@ export default {
   mounted() {
     const varaFontJsonPath =
       "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json";
-    setTimeout(() => {
-      new Vara(".block-greeting .text", varaFontJsonPath, [
-        {
-          text: "Invite you to our wedding party",
-          fontSize: 50
-        },
-        {
-          text: "Aaron & Ruby",
-          fontSize: 30,
-          textAlign: "right"
-        }
-      ]);
-    }, 1000);
+    new Vara(".block-greeting .text", varaFontJsonPath, [
+      {
+        text: "Invite you to our wedding party",
+        fontSize: innerWidth > 768 ? 40 : 30
+      },
+      {
+        text: "Aaron & Ruby",
+        fontSize: innerWidth > 768 ? 30 : 16,
+        textAlign: "right"
+      }
+    ]);
 
     let { blockGreeting, blockGreetingMask } = this.$refs;
     this.$gsap.to(blockGreetingMask, {
@@ -44,13 +42,13 @@ export default {
 <style lang="scss" scoped>
 .block-greeting {
   position: relative;
-  background-image: url(../assets/img/20190830_R7005511.jpeg);
   height: 100vh;
+  background-image: url(../assets/img/20190830_R7005511.jpeg);
   background-size: cover;
-  background-position: bottom right;
+  background-position: bottom 0 right -230px;
   background-repeat: no-repeat;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   .mask {
     position: absolute;
     content: "";
@@ -65,10 +63,17 @@ export default {
     box-shadow: 0px -30px 300px 10px #ffffff inset;
   }
   .text {
-    padding: 0 8%;
-    width: 30%;
+    padding: 20% 10%;
+    width: 100vw;
     svg {
       overflow: visible;
+    }
+  }
+  @media (min-width: 768px) {
+    align-items: center;
+    background-position: bottom right;
+    .text {
+      width: 50vw;
     }
   }
 }
