@@ -1,34 +1,7 @@
 <template>
   <div id="app">
     <greeting />
-    <div class="block block-invite" ref="blockInvite">
-      <div class="date">
-        <div>Saturday</div>
-        <div>December 19</div>
-        <div>2020</div>
-      </div>
-      <div class="text">
-        給每一個曾參與我們成長過程的你們：<br />
-        <br />
-        歷經了8年的愛情長跑，我們決定對一路從學生時期陪伴的彼此，許下共度餘生的承諾💍<br />
-        <br />
-        在這個疫情攪局的2020年，世界發生了很多改變，計畫也不停地被打亂。<br />
-        但這是2019年就預定下的日期，因此我們還是懷抱著小小的夢想，希望婚禮能夠順利照常舉行。
-        也衷心地期盼年底的婚禮可以象徵否極泰來的開始！<br />
-        <br />
-        在這個對我們來說非常重要的日子，<br />
-        邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
-        <br />
-        <a
-          class="rsvp"
-          href="https://www.surveycake.com/s/vrPmp"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          RSVP
-        </a>
-      </div>
-    </div>
+    <invitation />
     <div class="block block-profile" ref="blockProfile">
       <div class="aaron" ref="blockProfileAaron">
         <div class="name" ref="blockProfileAaronName">@Aaron</div>
@@ -143,6 +116,7 @@
 
 <script>
 import Greeting from "@/components/greeting";
+import Invitation from "@/components/invitation";
 import { Stack, StackItem } from "vue-stack-grid";
 const gallery = require.context("@/assets/img/gallery");
 const images = gallery.keys().map(key => gallery(key));
@@ -150,7 +124,7 @@ const images = gallery.keys().map(key => gallery(key));
 
 export default {
   name: "App",
-  components: { Greeting, Stack, StackItem },
+  components: { Greeting, Invitation, Stack, StackItem },
   data() {
     return {
       viewerOptions: {
@@ -175,19 +149,6 @@ export default {
     };
   },
   mounted() {
-    let { blockInvite } = this.$refs;
-    this.$gsap.from(blockInvite, {
-      opacity: 0,
-      y: 10,
-      scrollTrigger: {
-        trigger: blockInvite,
-        start: "top 100%",
-        end: "bottom 100%",
-        // markers: true,
-        scrub: 1
-      }
-    });
-
     let {
       blockProfile,
       blockProfileAaron,
@@ -303,7 +264,7 @@ export default {
       duration: 2,
       scrollTrigger: {
         trigger: blockGallery,
-        markers: true,
+        // markers: true,
         start: "top bottom",
         end: "+=10%",
         toggleActions: "play none none none"
@@ -314,27 +275,6 @@ export default {
 </script>
 
 <style lang="scss">
-.block-invite {
-  position: absolute;
-  top: 110vh;
-  width: 100%;
-  color: #fff;
-  box-sizing: border-box;
-  padding: 0 10vw;
-  .date {
-    font-size: 8vmin;
-    margin-bottom: 10vh;
-    font-weight: 600;
-  }
-  .text {
-    font-size: 1rem;
-    max-width: 30rem;
-    margin-left: auto;
-  }
-  .rsvp {
-    font-weight: 500;
-  }
-}
 .block-profile {
   padding: 0 10vw 20vh 10vw;
   background-color: rgb(184, 202, 217);
