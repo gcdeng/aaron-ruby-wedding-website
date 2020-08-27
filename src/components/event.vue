@@ -54,8 +54,8 @@ export default {
       opacity: 0,
       scrollTrigger: {
         // markers: true,
-        start: "top 95%",
-        end: "+=30%",
+        start: "top 80%",
+        end: "+=10%",
         trigger: blockEventLocation,
         scrub: 1
       }
@@ -64,8 +64,8 @@ export default {
       opacity: 0,
       scrollTrigger: {
         // markers: true,
-        start: "top 95%",
-        end: "+=30%",
+        start: "top 80%",
+        end: "+=10%",
         trigger: blockEvent1,
         scrub: 1
       }
@@ -74,8 +74,8 @@ export default {
       opacity: 0,
       scrollTrigger: {
         // markers: true,
-        start: "top 95%",
-        end: "+=30%",
+        start: "top 80%",
+        end: "+=10%",
         trigger: blockEvent2,
         scrub: 1
       }
@@ -90,13 +90,14 @@ export default {
   margin-top: -100vh;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   flex-direction: column;
   font-weight: 600;
   font-size: 1.5rem;
-  // & > div:not(:last-child) {
-  //   margin-bottom: 1vh;
-  // }
+  padding: 0 10vw;
+  & > div:not(:last-child) {
+    margin-bottom: 5vh;
+  }
   .location {
     // .caption {
     //   font-weight: 600;
@@ -113,7 +114,7 @@ export default {
   .event {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
   }
   .event-time {
     .small {
