@@ -50,7 +50,7 @@ export default {
     let { blockGallery } = this.$refs;
     this.$gsap.from(blockGallery, {
       opacity: 0,
-      duration: 2,
+      duration: 1,
       scrollTrigger: {
         trigger: blockGallery,
         // markers: true,
