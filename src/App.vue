@@ -314,19 +314,6 @@ export default {
 </script>
 
 <style lang="scss">
-$backgroundColor1: rgb(184, 202, 217);
-// rgb(155, 181, 198);
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  color: #2c3e50;
-}
-
-.block {
-  padding: 20vh 10vw;
-}
-
 .block-invite {
   position: absolute;
   top: 110vh;
@@ -350,7 +337,7 @@ $backgroundColor1: rgb(184, 202, 217);
 }
 .block-profile {
   padding: 0 10vw 20vh 10vw;
-  background-color: $backgroundColor1;
+  background-color: rgb(184, 202, 217);
   overflow: hidden;
   & > div {
     height: 100vmin;
