@@ -5,7 +5,7 @@
     <profile />
     <event />
     <gallery />
-    <Copyright />
+    <copyright />
   </div>
 </template>
 
