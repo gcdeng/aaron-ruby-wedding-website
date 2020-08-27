@@ -1,10 +1,6 @@
 <template>
   <div id="app">
-    <div ref="blockLanding" class="block-landing">
-      <div class="greet-text"></div>
-      <div class="shadow mask"></div>
-      <div ref="blockLandingMask" class="mask"></div>
-    </div>
+    <greeting />
     <div class="block block-invite" ref="blockInvite">
       <div class="date">
         <div>Saturday</div>
@@ -146,7 +142,7 @@
 </template>
 
 <script>
-import Vara from "vara";
+import Greeting from "@/components/greeting";
 import { Stack, StackItem } from "vue-stack-grid";
 const gallery = require.context("@/assets/img/gallery");
 const images = gallery.keys().map(key => gallery(key));
@@ -154,7 +150,7 @@ const images = gallery.keys().map(key => gallery(key));
 
 export default {
   name: "App",
-  components: { Stack, StackItem },
+  components: { Greeting, Stack, StackItem },
   data() {
     return {
       viewerOptions: {
@@ -179,32 +175,6 @@ export default {
     };
   },
   mounted() {
-    const varaFontJsonPath =
-      "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json";
-    setTimeout(() => {
-      new Vara(".greet-text", varaFontJsonPath, [
-        {
-          text: "Invite you to our wedding party",
-          fontSize: 50
-        },
-        {
-          text: "Aaron & Ruby",
-          fontSize: 30,
-          textAlign: "right"
-        }
-      ]);
-    }, 1000);
-
-    let { blockLanding, blockLandingMask } = this.$refs;
-    this.$gsap.to(blockLandingMask, {
-      backgroundColor: "rgb(184, 202, 217)",
-      scrollTrigger: {
-        // markers: true,
-        pin: true,
-        trigger: blockLanding,
-        scrub: 2
-      }
-    });
     let { blockInvite } = this.$refs;
     this.$gsap.from(blockInvite, {
       opacity: 0,
@@ -357,36 +327,6 @@ $backgroundColor1: rgb(184, 202, 217);
   padding: 20vh 10vw;
 }
 
-.block-landing {
-  position: relative;
-  background-image: url(assets/img/20190830_R7005511.jpeg);
-  height: 100vh;
-  background-size: cover;
-  background-position: bottom right;
-  background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  .mask {
-    position: absolute;
-    content: "";
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    // box-shadow: 0 0 80px 50px #ffffff inset;
-    background-color: rgba($color: #fff, $alpha: 0);
-  }
-  .shadow {
-    box-shadow: 0px -30px 300px 10px #ffffff inset;
-  }
-  .greet-text {
-    padding: 0 8%;
-    width: 30%;
-    svg {
-      overflow: visible;
-    }
-  }
-}
 .block-invite {
   position: absolute;
   top: 110vh;
