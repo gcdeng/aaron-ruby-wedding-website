@@ -330,13 +330,12 @@ export default {
 
     this.$gsap.from(blockGallery, {
       opacity: 0,
-      duration: 4,
+      duration: 2,
       scrollTrigger: {
-        // markers: true,
-        start: "top bottom",
-        end: "bottom bottom",
         trigger: blockGallery,
-        // scrub: 1,
+        markers: true,
+        start: "top bottom",
+        end: "+=10%",
         toggleActions: "play none none none"
       }
     });
