@@ -55,7 +55,7 @@ export default {
   font-size: 1.2rem;
   padding: 0 10vw;
   & > div {
-    margin-bottom: 3vh;
+    margin-bottom: 1rem;
   }
   .location svg {
     margin-right: 5px;
