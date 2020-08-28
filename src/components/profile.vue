@@ -95,7 +95,7 @@ export default {
       .from(blockProfileRubyRow, {});
 
     this.$gsap.to(blockProfileTransitionImg, {
-      scale: 1.1,
+      scale: 1.2,
       scrollTrigger: {
         // markers: true,
         start: "top bottom",

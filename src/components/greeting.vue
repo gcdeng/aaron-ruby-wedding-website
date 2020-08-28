@@ -11,7 +11,7 @@ import Vara from "vara";
 export default {
   name: "Greeting",
   mounted() {
-    new Vara(
+    this.varaText = new Vara(
       ".block-greeting .text",
       "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json",
       [
@@ -27,7 +27,8 @@ export default {
       ],
       {
         strokeWidth: 1, // Width / Thickness of the stroke
-        color: "#2c3e50" // Color of the text
+        color: "#2c3e50", // Color of the text,
+        autoAnimation: false
       }
     );
 
@@ -41,6 +42,11 @@ export default {
         scrub: 1
       }
     });
+  },
+  methods: {
+    drawVaraText() {
+      this.varaText.playAll();
+    }
   }
 };
 </script>
