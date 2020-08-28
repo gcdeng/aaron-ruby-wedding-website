@@ -1,10 +1,8 @@
 <template>
   <div class="block block-event">
-    <!-- <div class="title">Wedding Events</div> -->
-
-    <div class="location" ref="blockEventLocation">
-      <!-- <div class="caption">THE VENUE</div> -->
-      <div class="venue">
+    <div class="event">
+      <div class="event-time">2020/12/19</div>
+      <div class="event-name location">
         <a
           href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
           target="_blank"
@@ -13,35 +11,15 @@
           <font-awesome-icon icon="map-marker-alt" />陽明山中國麗緻飯店
         </a>
       </div>
-      <!-- <div class="address">
-        <a
-          href="https://goo.gl/maps/eRAWmqctc4x85jWXA"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          台北市士林區格致路237號
-        </a>
-      </div> -->
     </div>
-    <div class="event" ref="blockEvent1">
-      <div class="event-time">11:00<span class="small">AM</span></div>
+    <div class="event">
+      <div class="event-time">11:00AM</div>
       <div class="event-name">#戶外證婚派對</div>
     </div>
-    <div class="event" ref="blockEvent2">
-      <div class="event-time">12:30<span class="small">PM</span></div>
+    <div class="event">
+      <div class="event-time">12:30PM</div>
       <div class="event-name">#午宴</div>
     </div>
-
-    <!-- <div class="row">
-        <div class="col img event-1">
-          <div class="text event-time">11:00<span class="small">AM</span></div>
-          <div class="text event-name">#weddingceremony</div>
-        </div>
-        <div class="col img event-2">
-          <div class="text event-time">12:30<span class="small">PM</span></div>
-          <div class="text event-name">#lunch</div>
-        </div>
-      </div> -->
   </div>
 </template>
 
@@ -49,36 +27,18 @@
 export default {
   name: "Event",
   mounted() {
-    let { blockEventLocation, blockEvent1, blockEvent2 } = this.$refs;
-    this.$gsap.from(blockEventLocation, {
-      opacity: 0,
-      scrollTrigger: {
-        // markers: true,
-        start: "top 80%",
-        end: "+=10%",
-        trigger: blockEventLocation,
-        scrub: 1
-      }
-    });
-    this.$gsap.from(blockEvent1, {
-      opacity: 0,
-      scrollTrigger: {
-        // markers: true,
-        start: "top 80%",
-        end: "+=10%",
-        trigger: blockEvent1,
-        scrub: 1
-      }
-    });
-    this.$gsap.from(blockEvent2, {
-      opacity: 0,
-      scrollTrigger: {
-        // markers: true,
-        start: "top 80%",
-        end: "+=10%",
-        trigger: blockEvent2,
-        scrub: 1
-      }
+    let eventDivs = document.querySelectorAll(".event");
+    eventDivs.forEach(eventDiv => {
+      this.$gsap.from(eventDiv, {
+        opacity: 0,
+        scrollTrigger: {
+          // markers: true,
+          start: "top 80%",
+          end: "+=10%",
+          trigger: eventDiv,
+          scrub: 1
+        }
+      });
     });
   }
 };
@@ -92,83 +52,24 @@ export default {
   display: flex;
   align-items: baseline;
   flex-direction: column;
-  font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   padding: 0 10vw;
-  & > div:not(:last-child) {
-    margin-bottom: 5vh;
+  & > div {
+    margin-bottom: 3vh;
   }
-  .location {
-    // .caption {
-    //   font-weight: 600;
-    // }
-    .venue {
-      svg {
-        margin-right: 5px;
-      }
-    }
-    // .address {
-    //   font-weight: normal;
-    // }
+  .location svg {
+    margin-right: 5px;
   }
   .event {
     display: flex;
     flex-direction: column;
     align-items: baseline;
   }
-  .event-time {
-    .small {
-      font-size: 1.2rem;
-    }
-  }
   .event-name {
-    padding: 0 10px;
+    padding: 0 10px 2px 10px;
     border-radius: 5px;
-    font-size: 1.2rem;
-    text-decoration: underline;
     background-color: rgba(44, 62, 80, 0.5);
     color: white;
   }
-
-  // .title {
-  //   text-align: center;
-  //   font-size: 10vmin;
-  //   font-weight: 500;
-  // }
-  // .row {
-  //   width: 100%;
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   justify-content: space-evenly;
-  //   .col {
-  //     box-shadow: 0px 5px 35px rgba(53, 53, 53, 0.06);
-  //     padding: 10%;
-  //     display: inline-flex;
-  //     align-items: center;
-  //     justify-content: center;
-  //     flex-direction: column;
-  //     margin-bottom: 10vh;
-  //     width: 10vw;
-  //     min-width: 14rem;
-  //     height: 30vh;
-  //     min-height: 15rem;
-  //     & > .text {
-  //       font-weight: 600;
-  //       margin-bottom: 5px;
-  //     }
-  //   }
-
-  //   .img {
-  //     background-size: cover;
-  //     background-repeat: no-repeat;
-  //     background-position: center;
-  //     &.event-1 {
-  //       background-image: url(assets/img/shardayyy-photography-fJzmPe-a0eU-unsplash.jpg);
-  //     }
-  //     &.event-2 {
-  //       background-image: url(assets/img/annie-spratt-TQSB-suJu1k-unsplash.jpg);
-  //     }
-  //   }
-  // }
 }
 </style>
