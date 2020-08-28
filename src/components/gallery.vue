@@ -7,7 +7,11 @@
       monitor-images-loaded
       v-viewer="viewerOptions"
     >
-      <stack-item v-for="(src, i) in images" :key="i">
+      <stack-item
+        v-for="(src, i) in images"
+        :key="i"
+        style="transition: transform 300ms"
+      >
         <img :src="src" class="img" />
       </stack-item>
     </stack>
