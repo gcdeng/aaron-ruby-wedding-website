@@ -4,11 +4,11 @@
       <div class="name" ref="blockProfileAaronName">@Aaron</div>
       <div class="row" ref="blockProfileAaronRow">
         <div class="column">
-          <div class="img img-1" />
+          <div class="img img-1" v-lazy:background-image="imgs.img1" />
         </div>
         <div class="column">
-          <div class="img img-2" />
-          <div class="img img-3" />
+          <div class="img img-2" v-lazy:background-image="imgs.img2" />
+          <div class="img img-3" v-lazy:background-image="imgs.img3" />
         </div>
       </div>
     </div>
@@ -22,23 +22,47 @@
       </div>
       <div class="row" ref="blockProfileRubyRow">
         <div class="column">
-          <div class="img img-4" />
-          <div class="img img-5" />
+          <div class="img img-4" v-lazy:background-image="imgs.img4" />
+          <div class="img img-5" v-lazy:background-image="imgs.img5" />
         </div>
         <div class="column">
-          <div class="img img-6" />
+          <div class="img img-6" v-lazy:background-image="imgs.img6" />
         </div>
       </div>
     </div>
-    <div class="img img-transition" ref="blockProfileTransitionImg">
+    <div
+      class="img img-transition"
+      v-lazy:background-image="imgs.img7"
+      ref="blockProfileTransitionImg"
+    >
       <div class="mask" ref="blockProfileTransitionImgMask"></div>
     </div>
   </div>
 </template>
 
 <script>
+import img1 from "@/assets/img/20190830_R7006018.webp";
+import img2 from "@/assets/img/20190830_R7005919.webp";
+import img3 from "@/assets/img/20190830_R7006012.webp";
+import img4 from "@/assets/img/20190830_R7005727.webp";
+import img5 from "@/assets/img/20190830_R7005728.webp";
+import img6 from "@/assets/img/20190830_R7005743.webp";
+import img7 from "@/assets/img/20190830_R7005505.webp";
 export default {
   name: "Profile",
+  data() {
+    return {
+      imgs: {
+        img1,
+        img2,
+        img3,
+        img4,
+        img5,
+        img6,
+        img7
+      }
+    };
+  },
   mounted() {
     let {
       blockProfile,
@@ -139,32 +163,32 @@ $imgPath: "~@/assets/img/";
   .img-1 {
     margin-right: 10px;
     height: 100%;
-    background-image: url($imgPath+"20190830_R7006018.webp");
+    // background-image: url($imgPath+"20190830_R7006018.webp");
   }
   .img-2 {
     margin-bottom: 10px;
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7005919.webp");
+    // background-image: url($imgPath+"20190830_R7005919.webp");
   }
   .img-3 {
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7006012.webp");
+    // background-image: url($imgPath+"20190830_R7006012.webp");
     background-position: top;
   }
   .img-4 {
     margin-bottom: 10px;
     margin-right: 10px;
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7005727.webp");
+    // background-image: url($imgPath+"20190830_R7005727.webp");
   }
   .img-5 {
     margin-right: 10px;
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7005728.webp");
+    // background-image: url($imgPath+"20190830_R7005728.webp");
   }
   .img-6 {
     height: 100%;
-    background-image: url($imgPath+"20190830_R7005743.webp");
+    // background-image: url($imgPath+"20190830_R7005743.webp");
     background-position: bottom;
   }
   .img-transition {
@@ -173,7 +197,7 @@ $imgPath: "~@/assets/img/";
     width: 100vw;
     position: relative;
     left: -10vw;
-    background-image: url($imgPath+"20190830_R7005505.webp");
+    // background-image: url($imgPath+"20190830_R7005505.webp");
     background-position: center;
     .mask {
       width: 100%;
