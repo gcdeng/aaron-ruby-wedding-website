@@ -10,7 +10,9 @@ module.exports = {
       // when using title option,
       // template title tag needs to be <title><%= htmlWebpackPlugin.options.title %></title>
       title: "Aaron & Ruby Wedding Party",
-      description: "Invite you to our wedding party."
+      description: "Invite you to our wedding party.",
+      url: "https://rubysaidyes.netlify.app",
+      ogImage: "https://aaronrubywedding.netlify.app/ogimage.jpeg"
     }
   }
 };
