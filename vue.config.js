@@ -12,7 +12,7 @@ module.exports = {
       title: "Aaron & Ruby Wedding Party",
       description: "Invite you to our wedding party.",
       url: "https://rubysaidyes.netlify.app",
-      ogImage: "https://aaronrubywedding.netlify.app/ogimage.jpeg"
+      ogimage: "https://aaronrubywedding.netlify.app/ogimage.jpeg"
     }
   }
 };
