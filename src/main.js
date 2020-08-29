@@ -4,7 +4,8 @@ import Viewer from "v-viewer";
 Vue.use(Viewer);
 import VueLazyload from "vue-lazyload";
 Vue.use(VueLazyload, {
-  observer: true
+  observer: true,
+  lazyComponent: true
 });
 import "viewerjs/dist/viewer.css";
 import "@/gsap";

@@ -1,20 +1,22 @@
 <template>
   <div class="block block-gallery" ref="blockGallery">
-    <stack
-      :column-min-width="columnMinWidth"
-      :gutter-width="10"
-      :gutter-height="5"
-      monitor-images-loaded
-      v-viewer="viewerOptions"
-    >
-      <stack-item
-        v-for="(src, i) in images"
-        :key="i"
-        style="transition: transform 300ms"
+    <lazy-component>
+      <stack
+        :column-min-width="columnMinWidth"
+        :gutter-width="10"
+        :gutter-height="5"
+        monitor-images-loaded
+        v-viewer="viewerOptions"
       >
-        <img :src="src" class="img" />
-      </stack-item>
-    </stack>
+        <stack-item
+          v-for="(src, i) in images"
+          :key="i"
+          style="transition: transform 300ms"
+        >
+          <img :src="src" class="img" />
+        </stack-item>
+      </stack>
+    </lazy-component>
   </div>
 </template>
 
