@@ -1,3 +1,4 @@
+const url = "https://rubysaidyes.netlify.app";
 module.exports = {
   pages: {
     index: {
@@ -11,8 +12,8 @@ module.exports = {
       // template title tag needs to be <title><%= htmlWebpackPlugin.options.title %></title>
       title: "Aaron & Ruby Wedding Party",
       description: "Invite you to our wedding party.",
-      url: "https://rubysaidyes.netlify.app",
-      ogimage: "https://aaronrubywedding.netlify.app/ogimage.jpeg"
+      url,
+      ogimage: `${url}/ogimage.jpeg`
     }
   }
 };
