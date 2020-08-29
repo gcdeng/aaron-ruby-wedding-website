@@ -94,7 +94,7 @@ export default {
       scrollTrigger: {
         // markers: true,
         start: "top top",
-        end: "bottom top",
+        end: "bottom 20%",
         trigger: blockProfileTransitionImg,
         scrub: 1,
         pin: true

@@ -31,10 +31,11 @@ export default {
     eventDivs.forEach(eventDiv => {
       this.$gsap.from(eventDiv, {
         opacity: 0,
+        duration: 3,
         scrollTrigger: {
           // markers: true,
-          start: "top 80%",
-          end: "+=10%",
+          start: "top 100%",
+          end: "top 60%",
           trigger: eventDiv,
           scrub: 1
         }
