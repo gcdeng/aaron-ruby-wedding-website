@@ -41,13 +41,13 @@
 </template>
 
 <script>
-import img1 from "@/assets/img/20190830_R7006018.webp";
-import img2 from "@/assets/img/20190830_R7005919.webp";
-import img3 from "@/assets/img/20190830_R7006012.webp";
-import img4 from "@/assets/img/20190830_R7005727.webp";
-import img5 from "@/assets/img/20190830_R7005728.webp";
-import img6 from "@/assets/img/20190830_R7005743.webp";
-import img7 from "@/assets/img/20190830_R7005505.webp";
+import img1 from "@/assets/img/20190830_R7006018.jpeg";
+import img2 from "@/assets/img/20190830_R7005919.jpeg";
+import img3 from "@/assets/img/20190830_R7006012.jpeg";
+import img4 from "@/assets/img/20190830_R7005727.jpeg";
+import img5 from "@/assets/img/20190830_R7005728.jpeg";
+import img6 from "@/assets/img/20190830_R7005743.jpeg";
+import img7 from "@/assets/img/20190830_R7005505.jpeg";
 export default {
   name: "Profile",
   data() {
@@ -163,32 +163,32 @@ $imgPath: "~@/assets/img/";
   .img-1 {
     margin-right: 10px;
     height: 100%;
-    // background-image: url($imgPath+"20190830_R7006018.webp");
+    // background-image: url($imgPath+"20190830_R7006018.jpeg");
   }
   .img-2 {
     margin-bottom: 10px;
     height: 40vmin;
-    // background-image: url($imgPath+"20190830_R7005919.webp");
+    // background-image: url($imgPath+"20190830_R7005919.jpeg");
   }
   .img-3 {
     height: 40vmin;
-    // background-image: url($imgPath+"20190830_R7006012.webp");
+    // background-image: url($imgPath+"20190830_R7006012.jpeg");
     background-position: top;
   }
   .img-4 {
     margin-bottom: 10px;
     margin-right: 10px;
     height: 40vmin;
-    // background-image: url($imgPath+"20190830_R7005727.webp");
+    // background-image: url($imgPath+"20190830_R7005727.jpeg");
   }
   .img-5 {
     margin-right: 10px;
     height: 40vmin;
-    // background-image: url($imgPath+"20190830_R7005728.webp");
+    // background-image: url($imgPath+"20190830_R7005728.jpeg");
   }
   .img-6 {
     height: 100%;
-    // background-image: url($imgPath+"20190830_R7005743.webp");
+    // background-image: url($imgPath+"20190830_R7005743.jpeg");
     background-position: bottom;
   }
   .img-transition {
@@ -197,7 +197,7 @@ $imgPath: "~@/assets/img/";
     width: 100vw;
     position: relative;
     left: -10vw;
-    // background-image: url($imgPath+"20190830_R7005505.webp");
+    // background-image: url($imgPath+"20190830_R7005505.jpeg");
     background-position: center;
     .mask {
       width: 100%;
