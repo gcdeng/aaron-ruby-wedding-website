@@ -1,6 +1,9 @@
 <template>
   <div class="block block-copyright">
-    <div>Eric made with &#129293;</div>
+    <div>
+      <a href="https://gcdeng.com/" target="_blank" rel="author">Eric</a>
+      made with &#129293;
+    </div>
     <div>Copyright &#169; 2020 All rights reserved.</div>
   </div>
 </template>

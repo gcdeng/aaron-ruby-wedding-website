@@ -66,31 +66,5 @@ export default {
     line-height: 1.6;
     color: #fff;
   }
-
-  .fillin-link-effect {
-    padding-bottom: 5px;
-    color: #ffffff;
-    position: relative;
-    &::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      right: 100%;
-      background: #fff;
-      height: 2px;
-      -webkit-transition-property: right;
-      transition-property: right;
-      -webkit-transition-duration: 0.5s;
-      transition-duration: 0.5s;
-      -webkit-transition-timing-function: ease-out;
-      transition-timing-function: ease-out;
-    }
-    &:hover {
-      &::before {
-        right: 0;
-      }
-    }
-  }
 }
 </style>
