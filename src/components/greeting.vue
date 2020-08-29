@@ -55,7 +55,7 @@ export default {
 .block-greeting {
   position: relative;
   height: 100vh;
-  background-image: url(../assets/img/20190830_R7005511.jpeg);
+  background-image: url(../assets/img/20190830_R7005511.webp);
   background-size: cover;
   background-position: bottom 0 right -250px;
   background-repeat: no-repeat;

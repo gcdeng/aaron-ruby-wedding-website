@@ -139,32 +139,32 @@ $imgPath: "~@/assets/img/";
   .img-1 {
     margin-right: 10px;
     height: 100%;
-    background-image: url($imgPath+"20190830_R7006018.jpeg");
+    background-image: url($imgPath+"20190830_R7006018.webp");
   }
   .img-2 {
     margin-bottom: 10px;
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7005919.jpeg");
+    background-image: url($imgPath+"20190830_R7005919.webp");
   }
   .img-3 {
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7006012.jpeg");
+    background-image: url($imgPath+"20190830_R7006012.webp");
     background-position: top;
   }
   .img-4 {
     margin-bottom: 10px;
     margin-right: 10px;
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7005727.jpeg");
+    background-image: url($imgPath+"20190830_R7005727.webp");
   }
   .img-5 {
     margin-right: 10px;
     height: 40vmin;
-    background-image: url($imgPath+"20190830_R7005728.jpeg");
+    background-image: url($imgPath+"20190830_R7005728.webp");
   }
   .img-6 {
     height: 100%;
-    background-image: url($imgPath+"20190830_R7005743.jpeg");
+    background-image: url($imgPath+"20190830_R7005743.webp");
     background-position: bottom;
   }
   .img-transition {
@@ -173,7 +173,7 @@ $imgPath: "~@/assets/img/";
     width: 100vw;
     position: relative;
     left: -10vw;
-    background-image: url($imgPath+"20190830_R7005505.jpeg");
+    background-image: url($imgPath+"20190830_R7005505.webp");
     background-position: center;
     .mask {
       width: 100%;
