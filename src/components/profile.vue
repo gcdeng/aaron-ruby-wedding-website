@@ -147,7 +147,7 @@ $imgPath: "~@/assets/img/";
     font-family: "Dancing Script";
   }
   .ruby .name {
-    color: rgba(245, 226, 228);
+    color: #e4b4b9;
   }
   .row {
     display: flex;
