@@ -34,7 +34,7 @@ export default {
     let { blockInvitation } = this.$refs;
     this.$gsap.from(blockInvitation, {
       opacity: 0,
-      y: "10%",
+      y: "20%",
       scrollTrigger: {
         trigger: blockInvitation,
         start: "top 90%",

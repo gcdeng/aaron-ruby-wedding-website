@@ -56,12 +56,12 @@ export default {
     let { blockGallery } = this.$refs;
     this.$gsap.from(blockGallery, {
       opacity: 0,
-      duration: 1,
+      duration: 3,
       scrollTrigger: {
         trigger: blockGallery,
         // markers: true,
         start: "top bottom",
-        end: "+=10%",
+        end: "+=30%",
         toggleActions: "play none none none"
       }
     });

@@ -1,6 +1,6 @@
 <template>
   <div class="block block-profile" ref="blockProfile">
-    <div class="aaron" ref="blockProfileAaron">
+    <div class="aaron">
       <div class="name" ref="blockProfileAaronName">@Aaron</div>
       <div class="row" ref="blockProfileAaronRow">
         <div class="column">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="ruby" ref="blockProfileRuby">
+    <div class="ruby">
       <div
         class="name"
         :style="{ textAlign: 'right' }"
@@ -42,10 +42,8 @@ export default {
   mounted() {
     let {
       blockProfile,
-      blockProfileAaron,
       blockProfileAaronName,
       blockProfileAaronRow,
-      blockProfileRuby,
       blockProfileRubyName,
       blockProfileRubyRow,
       blockProfileTransitionImg,
@@ -54,48 +52,34 @@ export default {
     this.$gsap.to(blockProfile, {
       backgroundColor: "#fff",
       scrollTrigger: {
-        start: "top 10%",
+        start: "top top",
         // markers: true,
         trigger: blockProfile,
         scrub: 1
       }
     });
-    this.$gsap
-      .timeline({
-        defaults: {
-          opacity: 0,
-          x: (innerWidth / 10) * 1
-        },
+    let fadeInUpEls = [
+      blockProfileAaronName,
+      blockProfileAaronRow,
+      blockProfileRubyName,
+      blockProfileRubyRow
+    ];
+    fadeInUpEls.forEach(el => {
+      this.$gsap.from(el, {
+        opacity: 0,
+        y: "15%",
         scrollTrigger: {
           // markers: true,
           start: "top bottom",
-          end: "+=40%",
-          trigger: blockProfileAaron,
+          end: "top center",
+          trigger: el,
           scrub: 1
         }
-      })
-      .from(blockProfileAaronName, {})
-      .from(blockProfileAaronRow, {});
-
-    this.$gsap
-      .timeline({
-        defaults: {
-          opacity: 0,
-          x: (innerWidth / 10) * -1
-        },
-        scrollTrigger: {
-          // markers: true,
-          start: "top bottom",
-          end: "+=40%",
-          trigger: blockProfileRuby,
-          scrub: 1
-        }
-      })
-      .from(blockProfileRubyName, {})
-      .from(blockProfileRubyRow, {});
+      });
+    });
 
     this.$gsap.to(blockProfileTransitionImg, {
-      scale: 1.2,
+      scale: 1.4,
       scrollTrigger: {
         // markers: true,
         start: "top bottom",
@@ -106,7 +90,7 @@ export default {
       }
     });
     this.$gsap.to(blockProfileTransitionImgMask, {
-      backgroundColor: "rgba(255, 255, 255, 0.2)",
+      backgroundColor: "rgba(255, 255, 255, 0.3)",
       scrollTrigger: {
         // markers: true,
         start: "top top",
