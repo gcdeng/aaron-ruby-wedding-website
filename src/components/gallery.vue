@@ -1,5 +1,12 @@
 <template>
   <div class="block block-gallery" ref="blockGallery">
+    <div class="loader-container" v-if="!allImagesLoaded">
+      <div class="loader">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
     <lazy-component>
       <stack
         :column-min-width="columnMinWidth"
@@ -7,13 +14,10 @@
         :gutter-height="5"
         monitor-images-loaded
         v-viewer.static="viewerOptions"
+        @images-loaded="handleImageLoaded"
       >
-        <stack-item
-          v-for="(src, i) in images"
-          :key="i"
-          style="transition: transform 300ms"
-        >
-          <img :src="src" class="img" />
+        <stack-item v-for="(src, i) in images" :key="i">
+          <img :src="src" class="img" :class="{ hide: !allImagesLoaded }" />
         </stack-item>
       </stack>
     </lazy-component>
@@ -51,14 +55,24 @@ export default {
         }
       },
       columnMinWidth,
-      images
+      images,
+      loadedImageNum: 0,
+      allImagesLoaded: false
     };
+  },
+  methods: {
+    handleImageLoaded() {
+      this.loadedImageNum++;
+      if (this.loadedImageNum === this.images.length) {
+        this.allImagesLoaded = true;
+      }
+    }
   },
   mounted() {
     let { blockGallery } = this.$refs;
     this.$gsap.from(blockGallery, {
       opacity: 0,
-      duration: 3,
+      duration: 2,
       scrollTrigger: {
         trigger: blockGallery,
         // markers: true,
@@ -73,22 +87,94 @@ export default {
 
 <style lang="scss" scoped>
 .block-gallery {
-  overflow-x: scroll;
   padding: 5vh 1rem 0;
-  &::-webkit-scrollbar {
-    display: none;
-  }
-  .vsg-container {
-    min-width: 768px;
-    .vsg-stack-item img {
-      width: 100%;
-      cursor: pointer;
-      margin-right: 1rem;
+  position: relative;
+  .vsg-container .vsg-stack-item img {
+    width: 100%;
+    cursor: pointer;
+    opacity: 1;
+    transition: opacity 2s ease;
+    &.hide {
+      opacity: 0;
     }
   }
-  @media (min-width: 768px) {
-    .vsg-container {
-      min-width: 992px;
+  .loader-container {
+    z-index: 1;
+    padding-top: 5vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    box-sizing: border-box;
+    $color: #5dadec;
+    .loader {
+      display: block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      position: relative;
+      box-sizing: border-box;
+      background-color: transparent;
+      .line {
+        width: 30%;
+        height: 30%;
+        border-radius: 5px;
+        background-color: $color;
+        position: absolute;
+        bottom: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .line:first-child {
+        animation: height1 0.9s ease-in infinite;
+        left: 0;
+      }
+      .line:nth-child(2) {
+        animation: height2 0.9s ease-in infinite;
+        left: 35%;
+      }
+      .line:last-child {
+        animation: height3 0.9s ease-out infinite;
+        right: 0;
+      }
+
+      @keyframes height1 {
+        0% {
+          height: 30%;
+        }
+        50% {
+          height: 50%;
+        }
+        100% {
+          height: 30%;
+        }
+      }
+      @keyframes height2 {
+        0% {
+          height: 50%;
+        }
+        50% {
+          height: 30%;
+        }
+        100% {
+          height: 50%;
+        }
+      }
+      @keyframes height3 {
+        0% {
+          height: 20%;
+        }
+        50% {
+          height: 70%;
+        }
+        100% {
+          height: 20%;
+        }
+      }
     }
   }
 }
