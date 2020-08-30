@@ -103,7 +103,7 @@ export default {
   .rsvp {
     position: absolute;
     font-size: 1.5rem;
-    bottom: 15%;
+    bottom: 10%;
     right: 10vw;
     margin-bottom: 0;
     padding-bottom: 5px;
