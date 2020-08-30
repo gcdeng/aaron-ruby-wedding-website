@@ -6,6 +6,12 @@
   font-family: 'Dancing Script';
   src: url('../font/Dancing_Script/static/DancingScript-Regular.ttf') format('truetype');
 }
+html {
+  font-size: 16px;
+  @media (min-width: 992px) { 
+    font-size: 20px;
+   }
+}
 body {
   margin: 0;
   font-family: Noto Sans TC Light, Avenir, Helvetica, Arial, sans-serif;
