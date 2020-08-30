@@ -5,7 +5,8 @@ Vue.use(Viewer);
 import VueLazyload from "vue-lazyload";
 Vue.use(VueLazyload, {
   observer: true,
-  lazyComponent: true
+  lazyComponent: true,
+  observerOptions: { rootMargin: "0% 0% 150% 0%", threshold: 0.1 }
 });
 import "viewerjs/dist/viewer.css";
 import "@/gsap";
