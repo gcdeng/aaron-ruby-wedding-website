@@ -45,7 +45,7 @@ $back-color: #dbe3ea;
   height: 100%;
   background: white;
   animation-name: backdiv;
-  animation-duration: 2s;
+  animation-duration: 1s;
   animation-iteration-count: infinite;
 }
 
