@@ -14,7 +14,7 @@
       <br />
       在這個對我們來說非常重要的日子，邀請所有愛的你們，讓這個充滿意義的日子更為圓滿。<br />
       <br />
-      <a
+      <!-- <a
         class="fillin-link-effect"
         :style="{ fontWeight: 600 }"
         href="https://www.surveycake.com/s/vrPmp"
@@ -22,7 +22,7 @@
         rel="noopener noreferrer"
       >
         RSVP
-      </a>
+      </a> -->
     </div>
   </div>
 </template>

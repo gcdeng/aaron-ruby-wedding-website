@@ -20,6 +20,15 @@
       <div class="event-time">12:30PM</div>
       <div class="event-name">#午宴</div>
     </div>
+    <div class="rsvp dancing-font" ref="rsvp">
+      <a
+        href="https://www.surveycake.com/s/vrPmp"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        RSVP
+      </a>
+    </div>
   </div>
 </template>
 
@@ -27,7 +36,7 @@
 export default {
   name: "Event",
   mounted() {
-    let eventDivs = document.querySelectorAll(".event");
+    let eventDivs = document.querySelectorAll(".block-event .event");
     eventDivs.forEach(eventDiv => {
       this.$gsap.from(eventDiv, {
         opacity: 0,
@@ -35,11 +44,30 @@ export default {
         scrollTrigger: {
           // markers: true,
           start: "top 100%",
-          end: "top 60%",
+          end: "top 50%",
           trigger: eventDiv,
           scrub: 1
         }
       });
+    });
+    let { rsvp } = this.$refs;
+    this.$gsap.from(rsvp, {
+      opacity: 0,
+      duration: 5,
+      y: 20,
+      scrollTrigger: {
+        // markers: true,
+        start: "top 95%",
+        end: "bottom 95%",
+        trigger: rsvp,
+        scrub: 1,
+        onEnter: () => {
+          rsvp.classList.add("active");
+        },
+        onLeaveBack: () => {
+          rsvp.classList.remove("active");
+        }
+      }
     });
   }
 };
@@ -71,6 +99,32 @@ export default {
     border-radius: 5px;
     background-color: rgba(44, 62, 80, 0.5);
     color: white;
+  }
+  .rsvp {
+    position: absolute;
+    font-size: 3.5rem;
+    bottom: 15%;
+    right: 10vw;
+    margin-bottom: 0;
+    padding-bottom: 5px;
+    font-weight: 600;
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 150%;
+      background: #2c3e50;
+      height: 2px;
+      transition-property: right;
+      transition-duration: 1.5s;
+      transition-timing-function: ease-in-out;
+    }
+    &.active {
+      &::before {
+        right: 0;
+      }
+    }
   }
 }
 </style>
