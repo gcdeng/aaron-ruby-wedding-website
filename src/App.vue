@@ -41,7 +41,7 @@ export default {
       window.scrollTo(0, 0);
     }
     window.addEventListener("scroll", noScroll);
-    let loadingDuration = 4000;
+    let loadingDuration = 3000;
     let greetingDelay = 1500;
     let toId = setTimeout(() => {
       this.isLoading = false;
