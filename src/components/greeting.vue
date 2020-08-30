@@ -72,7 +72,8 @@ export default {
     background-color: rgba($color: #fff, $alpha: 0);
   }
   .shadow {
-    box-shadow: 0px -30px 300px 10px #ffffff inset;
+    // box-shadow: 0px -30px 300px 10px #ffffff inset;
+    box-shadow: 0px -50px 200px -100px #ffffff inset;
   }
   .text {
     padding: 15vh 10vw;
