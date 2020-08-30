@@ -6,7 +6,7 @@
         :gutter-width="10"
         :gutter-height="5"
         monitor-images-loaded
-        v-viewer="viewerOptions"
+        v-viewer.static="viewerOptions"
       >
         <stack-item
           v-for="(src, i) in images"
