@@ -44,9 +44,9 @@ $back-color: #dbe3ea;
   width: 100%;
   height: 100%;
   background: white;
-  animation-name: backdiv;
-  animation-duration: 1s;
-  animation-iteration-count: infinite;
+  // animation-name: backdiv;
+  // animation-duration: 1s;
+  // animation-iteration-count: infinite;
 }
 
 .heart {
