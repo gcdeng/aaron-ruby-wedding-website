@@ -26,7 +26,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        RSVP
+        婚禮表單
       </a>
     </div>
   </div>
@@ -102,7 +102,7 @@ export default {
   }
   .rsvp {
     position: absolute;
-    font-size: 3.5rem;
+    font-size: 1.5rem;
     bottom: 15%;
     right: 10vw;
     margin-bottom: 0;
