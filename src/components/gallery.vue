@@ -10,8 +10,8 @@
     <lazy-component>
       <stack
         :column-min-width="columnMinWidth"
-        :gutter-width="10"
-        :gutter-height="5"
+        :gutter-width="20"
+        :gutter-height="10"
         monitor-images-loaded
         v-viewer.static="viewerOptions"
         @images-loaded="handleImageLoaded"
@@ -34,7 +34,7 @@ export default {
   name: "Gallery",
   components: { Stack, StackItem },
   data() {
-    let columnMinWidth = innerWidth > 768 ? 150 : 100;
+    let columnMinWidth = innerWidth > 768 ? 200 : 80;
     return {
       viewerOptions: {
         button: false,
@@ -72,13 +72,12 @@ export default {
     let { blockGallery } = this.$refs;
     this.$gsap.from(blockGallery, {
       opacity: 0,
-      duration: 2,
+      duration: 3,
       scrollTrigger: {
         trigger: blockGallery,
         // markers: true,
         start: "top bottom",
-        end: "+=30%",
-        toggleActions: "play none none none"
+        end: "+=30%"
       }
     });
   }
@@ -87,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 .block-gallery {
-  padding: 5vh 1rem 0;
+  padding: 10vh 40px 0;
   position: relative;
   .vsg-container .vsg-stack-item img {
     width: 100%;
