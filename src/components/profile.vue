@@ -41,12 +41,12 @@
 </template>
 
 <script>
-import img1 from "@/assets/img/20190830_R7006018.jpeg";
-import img2 from "@/assets/img/20190830_R7005919.jpeg";
-import img3 from "@/assets/img/20190830_R7006012.jpeg";
-import img4 from "@/assets/img/20190830_R7005727.jpeg";
-import img5 from "@/assets/img/20190830_R7005728.jpeg";
-import img6 from "@/assets/img/20190830_R7005743.jpeg";
+import img1 from "@/assets/img/20190830_R7006018.jpg";
+import img2 from "@/assets/img/20190830_R7005919.jpg";
+import img3 from "@/assets/img/20190830_R7006012.jpg";
+import img4 from "@/assets/img/20190830_R7005727.jpg";
+import img5 from "@/assets/img/20190830_R7005728.jpg";
+import img6 from "@/assets/img/20190830_R7005743.jpg";
 import img7 from "@/assets/img/20190830_R7005505.jpeg";
 export default {
   name: "Profile",
