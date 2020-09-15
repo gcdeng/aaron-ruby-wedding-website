@@ -13,7 +13,7 @@ export default {
   mounted() {
     this.varaText = new Vara(
       ".block-greeting .text",
-      "https://rawcdn.githack.com/akzhy/Vara/ed6ab92fdf196596266ae76867c415fa659eb348/fonts/Satisfy/SatisfySL.json",
+      "./SatisfySL.json",
       [
         {
           text: "Invite you to our wedding party",
