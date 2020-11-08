@@ -1,4 +1,4 @@
-const url = "https://rubysaidyes.netlify.app";
+const url = "https://aaron-ruby-wedding.gcdeng.com/";
 module.exports = {
   pages: {
     index: {
